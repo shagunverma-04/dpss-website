@@ -1,0 +1,50 @@
+.quick-stats {
+  background: var(--text-dark);
+  color: white;
+  padding: 48px 40px;
+}
+
+.stats-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+
+.stat-label {
+  font-size: 15px;
+  opacity: 0.85;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .quick-stats {
+    padding: 40px 24px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .stat-number {
+    font-size: 42px;
+  }
+
+  .stat-label {
+    font-size: 14px;
+  }
+}
