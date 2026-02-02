@@ -2,11 +2,11 @@ services:
   - type: web
     name: dpss-website
     runtime: static
-    buildCommand: npm install && npm run build
+    buildCommand: npm ci && npx vite build
     staticPublishPath: ./dist
     envVars:
       - key: NODE_VERSION
-        value: 18
+        value: "18"
     headers:
       - path: /*
         name: Cache-Control
