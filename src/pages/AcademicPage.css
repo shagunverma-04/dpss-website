@@ -351,6 +351,8 @@
 }
 
 /* ===== Responsive ===== */
+
+/* Tablet */
 @media (max-width: 1100px) {
   .cert-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -361,13 +363,14 @@
   }
 }
 
+/* Large mobile / small tablet */
 @media (max-width: 900px) {
   .fee-layout {
     grid-template-columns: 1fr;
   }
 
   .fee-photo {
-    height: 300px;
+    height: 280px;
   }
 
   .curriculum-card {
@@ -380,32 +383,43 @@
   }
 
   .curriculum-photo-wrap {
-    height: 260px;
+    height: 240px;
   }
 
   .curriculum-body,
   .curriculum-card--reverse .curriculum-body {
-    padding: 32px 32px;
+    padding: 28px 28px 32px;
     border-top: 4px solid;
-  }
-
-}
-
-@media (max-width: 768px) {
-  .academic-hero {
-    height: 480px;
-  }
-
-  .academic-hero-title {
-    font-size: 38px;
-  }
-
-  .academic-hero-sub {
-    font-size: 16px;
   }
 
   .academic-section {
     padding: 72px 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .academic-hero {
+    height: auto;
+    min-height: 420px;
+    padding: 100px 0 60px;
+  }
+
+  .academic-hero-title {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+
+  .academic-hero-sub {
+    font-size: 15px;
+  }
+
+  .academic-section {
+    padding: 60px 0;
+  }
+
+  .section-header-left {
+    margin-bottom: 36px;
   }
 
   .cert-grid {
@@ -418,11 +432,36 @@
 
   .fee-banner {
     flex-direction: column;
-    gap: 16px;
-    padding: 24px;
+    gap: 14px;
+    padding: 20px;
   }
 
-  .guidelines-photo-col {
-    grid-template-columns: 1fr;
+  .curriculum-photo-wrap {
+    height: 200px;
+  }
+
+  .curriculum-body,
+  .curriculum-card--reverse .curriculum-body {
+    padding: 24px 20px 28px;
+  }
+
+  .curriculum-level {
+    font-size: 22px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .academic-hero-title {
+    font-size: 28px;
+  }
+
+  .cert-card {
+    padding: 28px 24px;
+  }
+
+  .guideline-item {
+    padding: 16px 18px;
+    gap: 12px;
   }
 }

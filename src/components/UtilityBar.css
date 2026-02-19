@@ -30,20 +30,8 @@
   opacity: 1;
 }
 
-@media (max-width: 768px) {
-  .utility-container {
-    flex-direction: column;
-    gap: 12px;
-    padding: 12px 24px;
-  }
-
-  .utility-links {
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .utility-links a {
-    font-size: 12px;
+@media (max-width: 860px) {
+  .utility-bar {
+    display: none;
   }
 }
