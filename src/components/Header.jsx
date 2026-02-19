@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
 
-const Header = () => {
+const Header = ({ currentPage, onNavigate }) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -14,18 +14,28 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { text: 'About', href: '#' },
-    { text: 'Academics', href: '#' },
-    { text: 'Admissions', href: '#' },
-    { text: 'Student Life', href: '#' },
-    { text: 'News & Events', href: '#' },
-    { text: 'Contact', href: '#' }
+    { text: 'About', page: 'home' },
+    { text: 'Academics', page: 'academics' },
+    { text: 'Admissions', page: 'home' },
+    { text: 'Student Life', page: 'home' },
+    { text: 'News & Events', page: 'home' },
+    { text: 'Contact', page: 'home' }
   ];
+
+  const handleNav = (e, page) => {
+    e.preventDefault();
+    onNavigate(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        <a href="#" className="logo">
+        <a
+          href="#"
+          className="logo"
+          onClick={(e) => handleNav(e, 'home')}
+        >
           <div className="logo-mark"><img src="/img/dpss-logo.png" alt="DPS Robertsganj" /></div>
           <div className="logo-text">
             <div className="logo-name">DPS Robertsganj</div>
@@ -37,7 +47,13 @@ const Header = () => {
           <ul className="main-nav">
             {navItems.map((item, index) => (
               <li key={index}>
-                <a href={item.href}>{item.text}</a>
+                <a
+                  href="#"
+                  className={currentPage === item.page && item.text === 'Academics' && currentPage === 'academics' ? 'nav-active' : ''}
+                  onClick={(e) => handleNav(e, item.page)}
+                >
+                  {item.text}
+                </a>
               </li>
             ))}
           </ul>

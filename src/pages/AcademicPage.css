@@ -1,0 +1,428 @@
+/* ===== Academic Page ===== */
+
+.academic-page {
+  min-height: 100vh;
+}
+
+/* ===== Hero — full photo background ===== */
+.academic-hero {
+  position: relative;
+  height: 540px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.academic-hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: brightness(0.55) saturate(0.85);
+}
+
+.academic-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(5, 65, 40, 0.82) 0%,
+    rgba(7, 81, 51, 0.6) 55%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+}
+
+.academic-hero-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 40px;
+}
+
+.academic-hero-content .section-label {
+  color: var(--accent);
+}
+
+.academic-hero-title {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  color: white;
+  margin-bottom: 24px;
+  max-width: 680px;
+}
+
+.academic-hero-sub {
+  font-size: 18px;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 620px;
+}
+
+/* ===== Section Layout ===== */
+.academic-section {
+  padding: 100px 0;
+}
+
+.bg-light    { background: var(--bg-light); }
+.bg-white    { background: var(--bg-white); }
+.bg-green-tint { background: #f0f7f4; }
+
+/* Subtle dot pattern for student guidelines */
+.bg-dots {
+  background-color: #f8f6f3;
+  background-image: radial-gradient(circle, rgba(7,81,51,0.1) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ===== Left-aligned section headers ===== */
+.section-header-left {
+  max-width: 760px;
+  margin-bottom: 60px;
+}
+
+.section-header-left .section-title {
+  margin-bottom: 20px;
+}
+
+/* ===== Fee Section — split layout ===== */
+.fee-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.fee-image-col {
+  position: relative;
+}
+
+.fee-photo {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.14);
+  display: block;
+}
+
+.fee-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.fee-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: white;
+  border-radius: 14px;
+  padding: 32px 36px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  border-left: 5px solid var(--primary);
+  margin-top: 8px;
+}
+
+.fee-banner-icon {
+  font-size: 36px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.fee-banner-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  letter-spacing: -0.3px;
+}
+
+.fee-banner-content p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text-gray);
+  margin-bottom: 20px;
+}
+
+.fee-cta-btn {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.fee-cta-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ===== Certificate Section ===== */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.cert-card {
+  background: var(--bg-light);
+  border-radius: 14px;
+  padding: 36px 32px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-light);
+}
+
+.cert-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.09);
+}
+
+.cert-icon {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.cert-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.cert-text {
+  font-size: 15px;
+  color: var(--text-gray);
+  line-height: 1.75;
+}
+
+/* ===== Curriculum — alternating photo + text ===== */
+.curriculum-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.curriculum-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.3s ease;
+}
+
+.curriculum-card:hover {
+  box-shadow: 0 14px 48px rgba(0, 0, 0, 0.12);
+}
+
+.curriculum-card--reverse {
+  direction: rtl;
+}
+
+.curriculum-card--reverse > * {
+  direction: ltr;
+}
+
+.curriculum-photo-wrap {
+  position: relative;
+  height: 360px;
+  overflow: hidden;
+}
+
+.curriculum-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.curriculum-card:hover .curriculum-photo {
+  transform: scale(1.04);
+}
+
+.curriculum-photo-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.curriculum-badge-icon {
+  font-size: 18px;
+}
+
+.curriculum-body {
+  padding: 40px 48px 40px 0;
+  border-top: 4px solid;
+  margin-top: 0;
+}
+
+.curriculum-card--reverse .curriculum-body {
+  padding: 40px 0 40px 48px;
+}
+
+.curriculum-level {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.curriculum-body p {
+  font-size: 15.5px;
+  line-height: 1.85;
+  color: var(--text-gray);
+  margin-bottom: 16px;
+}
+
+.curriculum-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== Guidelines Sections ===== */
+.guidelines-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+
+.guideline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px 24px;
+  border: 1px solid var(--border-light);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.guideline-item:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.guideline-item--parent {
+  border-color: #c8e6c9;
+}
+
+.guideline-num {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--primary);
+  background: #e8f5ee;
+  border-radius: 6px;
+  padding: 4px 10px;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+.guideline-num--parent {
+  background: #e8f5ee;
+  color: var(--primary);
+}
+
+.guideline-text {
+  font-size: 14.5px;
+  color: var(--text-gray);
+  line-height: 1.7;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1100px) {
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fee-layout {
+    gap: 48px;
+  }
+}
+
+@media (max-width: 900px) {
+  .fee-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .fee-photo {
+    height: 300px;
+  }
+
+  .curriculum-card {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .curriculum-card--reverse {
+    direction: ltr;
+  }
+
+  .curriculum-photo-wrap {
+    height: 260px;
+  }
+
+  .curriculum-body,
+  .curriculum-card--reverse .curriculum-body {
+    padding: 32px 32px;
+    border-top: 4px solid;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .academic-hero {
+    height: 480px;
+  }
+
+  .academic-hero-title {
+    font-size: 38px;
+  }
+
+  .academic-hero-sub {
+    font-size: 16px;
+  }
+
+  .academic-section {
+    padding: 72px 0;
+  }
+
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guidelines-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fee-banner {
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+  }
+
+  .guidelines-photo-col {
+    grid-template-columns: 1fr;
+  }
+}

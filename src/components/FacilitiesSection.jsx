@@ -4,12 +4,12 @@ import './FacilitiesSection.css';
 const FacilitiesSection = () => {
   const facilities = [
     {
-      image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=300&fit=crop&q=90',
+      image: 'img/476831564_941790714744524_1521817662912512543_n.jpg',
       title: 'Sports Complex',
       description: 'One of the largest sports facilities with Cricket, Football, Hockey, Tennis courts, and Athletic tracks.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=300&fit=crop&q=90',
+      image: 'img/477798227_941798504743745_5546827519590064483_n.jpg',
       title: 'Smart Classrooms',
       description: 'Wi-Fi enabled campus with multimedia desktops and LCD monitors in every classroom.'
     },

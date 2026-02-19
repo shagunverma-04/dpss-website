@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import UtilityBar from './components/UtilityBar';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -10,22 +10,33 @@ import PrincipalSection from './components/PrincipalSection';
 import NoticeSection from './components/NoticeSection';
 import CTABanner from './components/CTABanner';
 import Footer from './components/Footer';
+import AcademicPage from './pages/AcademicPage';
 import './App.css';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('home');
+
   return (
     <div className="App">
       <UtilityBar />
-      <Header />
-      <Hero />
-      <QuickStats />
-      <WelcomeSection />
-      <FacilitiesSection />
-      <MissionSection />
-      <PrincipalSection />
-      <NoticeSection />
-      <CTABanner />
-      <Footer />
+      <Header currentPage={currentPage} onNavigate={setCurrentPage} />
+
+      {currentPage === 'home' && (
+        <>
+          <Hero />
+          <QuickStats />
+          <WelcomeSection />
+          <FacilitiesSection />
+          <MissionSection />
+          <PrincipalSection />
+          <NoticeSection />
+          <CTABanner />
+        </>
+      )}
+
+      {currentPage === 'academics' && <AcademicPage />}
+
+      <Footer onNavigate={setCurrentPage} />
     </div>
   );
 }

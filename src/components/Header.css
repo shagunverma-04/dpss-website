@@ -80,8 +80,10 @@
   transition: color 0.3s;
 }
 
-.main-nav > li > a:hover {
+.main-nav > li > a:hover,
+.main-nav > li > a.nav-active {
   color: var(--primary);
+  font-weight: 700;
 }
 
 .header-cta {
