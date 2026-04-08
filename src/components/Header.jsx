@@ -20,10 +20,10 @@ const Header = ({ currentPage, onNavigate }) => {
   const navItems = [
     { text: 'About', page: 'home' },
     { text: 'Academics', page: 'academics' },
-    { text: 'Admissions', page: 'home' },
-    { text: 'Student Life', page: 'home' },
-    { text: 'News & Events', page: 'home' },
-    { text: 'Contact', page: 'home' },
+    { text: 'Admissions', page: 'admissions' },
+    { text: 'Student Life', page: 'student-life' },
+    { text: 'News & Events', page: 'news-events' },
+    { text: 'Contact', page: 'contact' },
   ];
 
   const handleNav = (e, page) => {
@@ -55,7 +55,7 @@ const Header = ({ currentPage, onNavigate }) => {
               <li key={index}>
                 <a
                   href="#"
-                  className={currentPage === 'academics' && item.page === 'academics' ? 'nav-active' : ''}
+                  className={currentPage === item.page ? 'nav-active' : ''}
                   onClick={(e) => handleNav(e, item.page)}
                 >
                   {item.text}
@@ -90,7 +90,7 @@ const Header = ({ currentPage, onNavigate }) => {
             <li key={index}>
               <a
                 href="#"
-                className={currentPage === 'academics' && item.page === 'academics' ? 'nav-active' : ''}
+                className={currentPage === item.page ? 'nav-active' : ''}
                 onClick={(e) => handleNav(e, item.page)}
               >
                 {item.text}

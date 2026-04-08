@@ -1,0 +1,378 @@
+/* ===== Student Life Page ===== */
+
+.student-life-page {
+  min-height: 100vh;
+}
+
+/* ===== Hero ===== */
+.sl-hero {
+  position: relative;
+  height: 560px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sl-hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  filter: brightness(0.5) saturate(0.75);
+}
+
+.sl-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    rgba(5, 65, 40, 0.9) 0%,
+    rgba(7, 81, 51, 0.6) 55%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+}
+
+.sl-hero-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 40px;
+}
+
+.sl-hero-content .section-label {
+  color: var(--accent);
+}
+
+.sl-hero-title {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  color: white;
+  margin-bottom: 24px;
+  max-width: 700px;
+}
+
+.sl-hero-sub {
+  font-size: 18px;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 620px;
+}
+
+/* ===== Shared Section ===== */
+.sl-section {
+  padding: 100px 0;
+}
+
+.bg-light      { background: var(--bg-light); }
+.bg-white      { background: var(--bg-white); }
+.bg-green-tint { background: #f0f7f4; }
+
+.bg-dots {
+  background-color: #f8f6f3;
+  background-image: radial-gradient(circle, rgba(7,81,51,0.1) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.section-header-left {
+  max-width: 760px;
+  margin-bottom: 60px;
+}
+
+.section-header-left .section-title {
+  margin-bottom: 20px;
+}
+
+/* ===== Intro Split ===== */
+.sl-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.sl-intro-photo {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.13);
+  display: block;
+}
+
+.sl-intro-extra {
+  font-size: 15.5px;
+  color: var(--text-gray);
+  line-height: 1.85;
+  margin-top: 16px;
+  margin-bottom: 28px;
+}
+
+.sl-intro-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sl-tag {
+  background: var(--bg-light);
+  border: 1px solid var(--border-light);
+  color: var(--primary);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* ===== Activities Grid ===== */
+.sl-activities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.sl-activity-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px 24px;
+  border: 1px solid var(--border-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sl-activity-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
+
+.sl-activity-icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.sl-activity-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.sl-activity-text {
+  font-size: 13.5px;
+  color: var(--text-gray);
+  line-height: 1.75;
+}
+
+/* ===== Houses Grid ===== */
+.sl-houses-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.sl-house-card {
+  background: var(--house-bg, #f0f7f4);
+  border-radius: 20px;
+  padding: 40px 28px;
+  text-align: center;
+  border: 2px solid var(--house-color, var(--primary));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sl-house-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.12);
+}
+
+.sl-house-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.sl-house-name {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.sl-house-values {
+  font-size: 13px;
+  color: var(--text-gray);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  line-height: 1.6;
+}
+
+/* ===== Events Grid ===== */
+.sl-events-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.sl-event-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: var(--bg-light);
+  border-radius: 14px;
+  padding: 28px 28px;
+  border: 1px solid var(--border-light);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sl-event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.08);
+}
+
+.sl-event-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.sl-event-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.sl-event-text {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.75;
+}
+
+/* ===== Values Grid ===== */
+.sl-values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.sl-value-card {
+  background: white;
+  border-radius: 16px;
+  padding: 36px 28px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sl-value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+.sl-value-num {
+  font-size: 48px;
+  font-weight: 900;
+  color: rgba(7, 81, 51, 0.12);
+  line-height: 1;
+  letter-spacing: -2px;
+  margin-bottom: 16px;
+}
+
+.sl-value-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.sl-value-text {
+  font-size: 14.5px;
+  color: var(--text-gray);
+  line-height: 1.75;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1200px) {
+  .sl-activities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .sl-houses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sl-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .sl-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .sl-intro-photo {
+    height: 280px;
+  }
+
+  .sl-section {
+    padding: 72px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .sl-hero {
+    height: auto;
+    min-height: 440px;
+    padding: 100px 0 60px;
+  }
+
+  .sl-hero-title {
+    font-size: 38px;
+    letter-spacing: -1px;
+  }
+
+  .sl-hero-sub {
+    font-size: 15px;
+  }
+
+  .sl-activities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sl-houses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sl-events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sl-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header-left {
+    margin-bottom: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sl-hero-title {
+    font-size: 30px;
+  }
+
+  .sl-houses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sl-activity-card,
+  .sl-value-card {
+    padding: 24px 20px;
+  }
+}

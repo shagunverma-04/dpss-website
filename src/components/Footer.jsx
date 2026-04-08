@@ -5,9 +5,9 @@ const Footer = ({ onNavigate }) => {
   const quickLinks = [
     { text: 'About Us', page: 'home' },
     { text: 'Academics', page: 'academics' },
-    { text: 'Admissions', page: 'home' },
-    { text: 'Facilities', page: 'home' },
-    { text: 'News & Events', page: 'home' },
+    { text: 'Admissions', page: 'admissions' },
+    { text: 'Student Life', page: 'student-life' },
+    { text: 'News & Events', page: 'news-events' },
   ];
 
   const academics = [

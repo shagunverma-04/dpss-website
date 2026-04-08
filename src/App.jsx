@@ -11,6 +11,10 @@ import NoticeSection from './components/NoticeSection';
 import CTABanner from './components/CTABanner';
 import Footer from './components/Footer';
 import AcademicPage from './pages/AcademicPage';
+import AdmissionsPage from './pages/AdmissionsPage';
+import StudentLifePage from './pages/StudentLifePage';
+import NewsEventsPage from './pages/NewsEventsPage';
+import ContactPage from './pages/ContactPage';
 import './App.css';
 
 function App() {
@@ -35,6 +39,10 @@ function App() {
       )}
 
       {currentPage === 'academics' && <AcademicPage />}
+      {currentPage === 'admissions' && <AdmissionsPage onNavigate={setCurrentPage} />}
+      {currentPage === 'student-life' && <StudentLifePage />}
+      {currentPage === 'news-events' && <NewsEventsPage />}
+      {currentPage === 'contact' && <ContactPage />}
 
       <Footer onNavigate={setCurrentPage} />
     </div>
