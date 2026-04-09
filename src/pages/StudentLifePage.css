@@ -7,10 +7,11 @@
 /* ===== Hero ===== */
 .sl-hero {
   position: relative;
-  height: 560px;
+  min-height: 560px;
   display: flex;
   align-items: center;
   overflow: hidden;
+  padding-top: 80px;
 }
 
 .sl-hero-bg-img {
@@ -37,7 +38,8 @@
 .sl-hero-content {
   position: relative;
   z-index: 2;
-  padding-top: 40px;
+  padding-top: 20px;
+  padding-bottom: 60px;
 }
 
 .sl-hero-content .section-label {
@@ -45,13 +47,14 @@
 }
 
 .sl-hero-title {
-  font-size: 64px;
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -2px;
+  font-family: var(--font-display);
+  font-size: 70px;
+  font-weight: 500;
+  line-height: 1.0;
+  letter-spacing: -0.5px;
   color: white;
   margin-bottom: 24px;
-  max-width: 700px;
+  max-width: 720px;
 }
 
 .sl-hero-sub {

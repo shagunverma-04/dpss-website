@@ -7,10 +7,11 @@
 /* ===== Hero ===== */
 .ct-hero {
   position: relative;
-  height: 500px;
+  min-height: 500px;
   display: flex;
   align-items: center;
   overflow: hidden;
+  padding-top: 80px;
 }
 
 .ct-hero-bg-img {
@@ -37,7 +38,8 @@
 .ct-hero-content {
   position: relative;
   z-index: 2;
-  padding-top: 40px;
+  padding-top: 20px;
+  padding-bottom: 60px;
 }
 
 .ct-hero-content .section-label {
@@ -45,10 +47,11 @@
 }
 
 .ct-hero-title {
-  font-size: 60px;
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -2px;
+  font-family: var(--font-display);
+  font-size: 66px;
+  font-weight: 500;
+  line-height: 1.0;
+  letter-spacing: -0.5px;
   color: white;
   margin-bottom: 24px;
   max-width: 700px;

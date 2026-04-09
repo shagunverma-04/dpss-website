@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import UtilityBar from './components/UtilityBar';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import Marquee from './components/Marquee';
 import QuickStats from './components/QuickStats';
 import WelcomeSection from './components/WelcomeSection';
 import FacilitiesSection from './components/FacilitiesSection';
@@ -19,30 +20,34 @@ import './App.css';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
+  const isHome = currentPage === 'home';
 
   return (
     <div className="App">
-      <UtilityBar />
+      {/* Utility bar only on inner pages — home has full-bleed hero */}
+      {!isHome && <UtilityBar />}
+
       <Header currentPage={currentPage} onNavigate={setCurrentPage} />
 
-      {currentPage === 'home' && (
+      {isHome && (
         <>
-          <Hero />
+          <Hero onNavigate={setCurrentPage} />
+          <Marquee />
           <QuickStats />
           <WelcomeSection />
           <FacilitiesSection />
           <MissionSection />
           <PrincipalSection />
           <NoticeSection />
-          <CTABanner />
+          <CTABanner onNavigate={setCurrentPage} />
         </>
       )}
 
-      {currentPage === 'academics' && <AcademicPage />}
-      {currentPage === 'admissions' && <AdmissionsPage onNavigate={setCurrentPage} />}
+      {currentPage === 'academics'    && <AcademicPage />}
+      {currentPage === 'admissions'   && <AdmissionsPage onNavigate={setCurrentPage} />}
       {currentPage === 'student-life' && <StudentLifePage />}
-      {currentPage === 'news-events' && <NewsEventsPage />}
-      {currentPage === 'contact' && <ContactPage />}
+      {currentPage === 'news-events'  && <NewsEventsPage />}
+      {currentPage === 'contact'      && <ContactPage />}
 
       <Footer onNavigate={setCurrentPage} />
     </div>

@@ -1,0 +1,42 @@
+/* ===== Marquee Ticker ===== */
+.marquee-wrap {
+  background: var(--accent);
+  overflow: hidden;
+  padding: 14px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: marquee-scroll 36s linear infinite;
+}
+
+.marquee-wrap:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #1a1a1a;
+  white-space: nowrap;
+  padding: 0 20px;
+}
+
+.marquee-dot {
+  font-size: 6px;
+  color: rgba(0, 0, 0, 0.35);
+}
+
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

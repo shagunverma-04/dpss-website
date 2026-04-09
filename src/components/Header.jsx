@@ -4,26 +4,26 @@ import './Header.css';
 const Header = ({ currentPage, onNavigate }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const isHome = currentPage === 'home';
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 
   const navItems = [
-    { text: 'About', page: 'home' },
-    { text: 'Academics', page: 'academics' },
-    { text: 'Admissions', page: 'admissions' },
+    { text: 'About',        page: 'home' },
+    { text: 'Academics',    page: 'academics' },
+    { text: 'Admissions',   page: 'admissions' },
     { text: 'Student Life', page: 'student-life' },
-    { text: 'News & Events', page: 'news-events' },
-    { text: 'Contact', page: 'contact' },
+    { text: 'News & Events',page: 'news-events' },
+    { text: 'Contact',      page: 'contact' },
   ];
 
   const handleNav = (e, page) => {
@@ -33,29 +33,35 @@ const Header = ({ currentPage, onNavigate }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  return (
-    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
-      <div className="header-container">
+  const headerClass = [
+    'header',
+    isHome ? 'header--hero' : 'header--solid',
+    scrolled ? 'header--scrolled' : '',
+  ].join(' ');
 
-        {/* Logo */}
-        <a href="#" className="logo" onClick={(e) => handleNav(e, 'home')}>
-          <div className="logo-mark">
+  return (
+    <header className={headerClass}>
+      <div className="header-inner">
+
+        {/* ── Logo ── */}
+        <a href="#" className="nav-logo" onClick={(e) => handleNav(e, 'home')}>
+          <div className="nav-logo-img">
             <img src="/img/dpss-logo.png" alt="DPS Robertsganj" />
           </div>
-          <div className="logo-text">
-            <div className="logo-name">DPS Robertsganj</div>
-            <div className="logo-tagline">Excellence Since 2000</div>
+          <div className="nav-logo-text">
+            <span className="nav-logo-name">DPS Robertsganj</span>
+            <span className="nav-logo-tag">Est. 2000</span>
           </div>
         </a>
 
-        {/* Desktop nav */}
-        <nav className="desktop-nav">
-          <ul className="main-nav">
-            {navItems.map((item, index) => (
-              <li key={index}>
+        {/* ── Desktop Nav — centered ALL CAPS ── */}
+        <nav className="nav-center" aria-label="Main navigation">
+          <ul className="nav-list">
+            {navItems.map((item, i) => (
+              <li key={i}>
                 <a
                   href="#"
-                  className={currentPage === item.page ? 'nav-active' : ''}
+                  className={`nav-link ${currentPage === item.page ? 'nav-link--active' : ''}`}
                   onClick={(e) => handleNav(e, item.page)}
                 >
                   {item.text}
@@ -65,47 +71,57 @@ const Header = ({ currentPage, onNavigate }) => {
           </ul>
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="header-cta desktop-cta">
-          <a href="#" className="btn-apply">Apply Now</a>
+        {/* ── Apply CTA ── */}
+        <div className="nav-cta">
+          <a
+            href="#"
+            className="nav-apply"
+            onClick={(e) => handleNav(e, 'admissions')}
+          >
+            Apply Now
+          </a>
         </div>
 
-        {/* Hamburger button — mobile only */}
+        {/* ── Hamburger ── */}
         <button
-          className={`hamburger ${menuOpen ? 'hamburger--open' : ''}`}
+          className={`nav-hamburger ${menuOpen ? 'nav-hamburger--open' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
         >
-          <span />
-          <span />
-          <span />
+          <span /><span /><span />
         </button>
       </div>
 
-      {/* Mobile drawer */}
-      <div className={`mobile-drawer ${menuOpen ? 'mobile-drawer--open' : ''}`}>
-        <ul className="mobile-nav">
-          {navItems.map((item, index) => (
-            <li key={index}>
-              <a
-                href="#"
-                className={currentPage === item.page ? 'nav-active' : ''}
-                onClick={(e) => handleNav(e, item.page)}
-              >
-                {item.text}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <div className="mobile-drawer-footer">
-          <a href="#" className="btn-apply btn-apply--mobile" onClick={(e) => { e.preventDefault(); setMenuOpen(false); }}>
-            Apply Now
-          </a>
+      {/* ── Mobile Drawer ── */}
+      <div className={`nav-drawer ${menuOpen ? 'nav-drawer--open' : ''}`}>
+        <div className="nav-drawer-inner">
+          <ul className="nav-drawer-list">
+            {navItems.map((item, i) => (
+              <li key={i}>
+                <a
+                  href="#"
+                  className={`nav-drawer-link ${currentPage === item.page ? 'nav-drawer-link--active' : ''}`}
+                  onClick={(e) => handleNav(e, item.page)}
+                >
+                  {item.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className="nav-drawer-footer">
+            <a href="#" className="nav-apply nav-apply--block" onClick={(e) => { e.preventDefault(); handleNav(e, 'admissions'); }}>
+              Apply for Admission
+            </a>
+            <div className="nav-drawer-contact">
+              <a href="tel:+919820967960">+91 98209 67960</a>
+              <span>·</span>
+              <span>Mon–Sat 8am–3pm</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Backdrop */}
       {menuOpen && <div className="nav-backdrop" onClick={() => setMenuOpen(false)} />}
     </header>
   );

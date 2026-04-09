@@ -1,51 +1,86 @@
 import React from 'react';
 import './FacilitiesSection.css';
+import useInView from '../hooks/useInView';
+
+const facilities = [
+  {
+    image: 'img/476831564_941790714744524_1521817662912512543_n.jpg',
+    title: 'Sports Complex',
+    tag: 'Athletics',
+    description: 'Cricket, Football, Hockey, Tennis & Athletic tracks — one of the most comprehensive sports facilities in the region.',
+    size: 'large'
+  },
+  {
+    image: 'img/477798227_941798504743745_5546827519590064483_n.jpg',
+    title: 'Smart Classrooms',
+    tag: 'Technology',
+    description: 'Wi-Fi campus with LCD monitors, multimedia desktops, and ICT-enabled learning in every room.',
+    size: 'small'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=400&fit=crop&q=90',
+    title: 'Modern Library',
+    tag: 'Knowledge',
+    description: 'Thousands of volumes alongside digital resources — a sanctuary for curious minds.',
+    size: 'small'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=600&h=400&fit=crop&q=90',
+    title: 'Science Labs',
+    tag: 'Discovery',
+    description: 'Fully equipped Physics, Chemistry, Biology and Computer labs that bring learning to life.',
+    size: 'small'
+  }
+];
 
 const FacilitiesSection = () => {
-  const facilities = [
-    {
-      image: 'img/476831564_941790714744524_1521817662912512543_n.jpg',
-      title: 'Sports Complex',
-      description: 'One of the largest sports facilities with Cricket, Football, Hockey, Tennis courts, and Athletic tracks.'
-    },
-    {
-      image: 'img/477798227_941798504743745_5546827519590064483_n.jpg',
-      title: 'Smart Classrooms',
-      description: 'Wi-Fi enabled campus with multimedia desktops and LCD monitors in every classroom.'
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=300&fit=crop&q=90',
-      title: 'Modern Library',
-      description: 'Extensive collection of books and digital resources to foster a love for reading and research.'
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=400&h=300&fit=crop&q=90',
-      title: 'Science Labs',
-      description: 'Well-equipped laboratories for Physics, Chemistry, Biology, and Computer Science.'
-    }
-  ];
+  const [sectionRef, inView] = useInView({ threshold: 0.1 });
 
   return (
-    <section className="facilities-section">
-      <div className="section-container">
-        <div className="section-header-center">
-          <div className="section-label">Our Facilities</div>
-          <h2 className="section-title">World-Class Infrastructure</h2>
+    <section className="facilities-section" ref={sectionRef}>
+      {/* Header */}
+      <div className="facilities-header section-container">
+        <div className={`fac-header-left ${inView ? 'reveal in-view' : 'reveal'}`}>
+          <span className="section-label">Our Facilities</span>
+          <h2 className="section-title">World-class<br />infrastructure</h2>
+        </div>
+        <div className={`fac-header-right ${inView ? 'reveal in-view delay-2' : 'reveal'}`}>
           <p className="section-description">
-            We provide state-of-the-art facilities designed to nurture academic excellence, 
-            physical development, and creative expression.
+            State-of-the-art spaces designed to nurture academic excellence,
+            physical development, and creative expression — all under one roof.
           </p>
         </div>
+      </div>
 
-        <div className="facilities-grid">
-          {facilities.map((facility, index) => (
-            <div key={index} className="facility-card">
-              <div className="facility-image">
-                <img src={facility.image} alt={facility.title} />
-              </div>
-              <div className="facility-content">
-                <h3 className="facility-title">{facility.title}</h3>
-                <p className="facility-description">{facility.description}</p>
+      {/* Bento Grid */}
+      <div className="facilities-bento section-container">
+        {/* Large featured card */}
+        <div className={`fac-card fac-card--large ${inView ? 'reveal in-view delay-1' : 'reveal'}`}>
+          <img src={facilities[0].image} alt={facilities[0].title} className="fac-img" />
+          <div className="fac-overlay">
+            <span className="fac-tag">{facilities[0].tag}</span>
+            <div className="fac-text">
+              <h3 className="fac-title">{facilities[0].title}</h3>
+              <p className="fac-desc">{facilities[0].description}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* 3 small cards */}
+        <div className="fac-small-col">
+          {facilities.slice(1).map((f, i) => (
+            <div
+              key={i}
+              className={`fac-card fac-card--small ${inView ? 'reveal in-view' : 'reveal'}`}
+              style={{ transitionDelay: `${0.15 + i * 0.1}s` }}
+            >
+              <img src={f.image} alt={f.title} className="fac-img" />
+              <div className="fac-overlay">
+                <span className="fac-tag">{f.tag}</span>
+                <div className="fac-text">
+                  <h3 className="fac-title">{f.title}</h3>
+                  <p className="fac-desc">{f.description}</p>
+                </div>
               </div>
             </div>
           ))}

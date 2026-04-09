@@ -1,80 +1,179 @@
+/* ===== Notice Section ===== */
 .notice-section {
-  padding: 120px 40px;
-  background: var(--bg-white);
+  padding: 100px 0;
+  background: var(--bg-light);
 }
 
+.notice-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.notice-header-left .section-title {
+  margin-bottom: 0;
+}
+
+.notice-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--primary);
+  padding-bottom: 2px;
+  white-space: nowrap;
+  transition: gap 0.25s ease, opacity 0.2s;
+}
+
+.notice-view-all:hover {
+  gap: 14px;
+  opacity: 0.7;
+}
+
+/* ── Grid ── */
 .notice-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-top: 60px;
+  gap: 24px;
 }
 
 .notice-card {
+  display: flex;
+  flex-direction: column;
   background: white;
+  border-radius: 20px;
+  padding: 36px 32px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1),
+              box-shadow 0.35s ease;
   border: 1px solid var(--border-light);
-  border-radius: 12px;
-  padding: 36px;
-  transition: all 0.3s;
+}
+
+.notice-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: var(--notice-accent, var(--primary));
+  transition: height 0.35s ease;
+  border-radius: 20px 20px 0 0;
 }
 
 .notice-card:hover {
-  border-color: var(--primary);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-  transform: translateY(-6px);
+  transform: translateY(-10px);
+  box-shadow: 0 24px 56px rgba(0,0,0,0.1);
 }
 
-.notice-date {
-  color: var(--primary);
-  font-weight: 700;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 16px;
+.notice-card:hover::before {
+  height: 4px;
 }
 
-.notice-title {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  color: var(--text-dark);
-  line-height: 1.3;
-}
-
-.notice-description {
-  font-size: 15px;
-  color: var(--text-gray);
-  line-height: 1.7;
+.notice-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 20px;
 }
 
-.notice-link {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  display: inline-flex;
+.notice-emoji {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.notice-category {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--notice-accent, var(--primary));
+  background: color-mix(in srgb, var(--notice-accent, var(--primary)) 10%, white);
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+
+.notice-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+  margin-bottom: 14px;
+}
+
+.notice-desc {
+  font-size: 14.5px;
+  color: var(--text-gray);
+  line-height: 1.75;
+  flex: 1;
+}
+
+/* Arrow — appears on hover */
+.notice-arrow {
+  display: flex;
   align-items: center;
-  gap: 6px;
-  transition: gap 0.3s;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-light);
+  color: var(--notice-accent, var(--primary));
+  margin-top: 24px;
+  align-self: flex-end;
+  transform: translateX(0);
+  transition: transform 0.3s ease, background 0.3s, color 0.3s;
 }
 
-.notice-link:hover {
-  gap: 10px;
+.notice-card:hover .notice-arrow {
+  transform: translateX(6px);
+  background: var(--notice-accent, var(--primary));
+  color: white;
 }
 
-@media (max-width: 1200px) {
-  .notice-section {
-    padding: 80px 24px;
-  }
+/* Bottom color bar (initial state) */
+.notice-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--notice-accent, var(--primary));
+  opacity: 0.15;
+  transition: opacity 0.3s;
+}
 
-  .notice-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.notice-card:hover .notice-bar {
+  opacity: 0;
+}
+
+/* Reveal animation */
+.ns-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1),
+              transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+
+.ns-reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .notice-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .notice-grid {
-    grid-template-columns: 1fr;
-  }
+  .notice-section { padding: 72px 0; }
+  .notice-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .notice-grid { grid-template-columns: 1fr; }
 }

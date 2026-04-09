@@ -1,127 +1,238 @@
+/* ===== Welcome Section ===== */
 .welcome-section {
-  padding: 120px 40px;
   background: var(--bg-white);
+  overflow: hidden;
 }
 
-.welcome-grid {
+.welcome-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  align-items: center;
+  min-height: 720px;
 }
 
-.welcome-image {
+/* ===== Left media block ===== */
+.welcome-media {
   position: relative;
-}
-
-.welcome-image img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-}
-
-.welcome-badge {
-  position: absolute;
-  bottom: -30px;
-  right: -30px;
-  background: var(--primary);
-  color: white;
-  padding: 32px;
-  border-radius: 12px;
-  box-shadow: 0 12px 32px rgba(7, 81, 51, 0.3);
-  text-align: center;
-}
-
-.badge-number {
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.badge-text {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 600;
-}
-
-.feature-list {
-  display: grid;
-  gap: 24px;
-}
-
-.feature-item {
-  display: flex;
-  gap: 20px;
-}
-
-.feature-icon {
-  width: 56px;
-  height: 56px;
   background: var(--bg-light);
-  border-radius: 10px;
+}
+
+.welcome-img-main {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.welcome-img-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.welcome-section:hover .welcome-img-main img {
+  transform: scale(1.04);
+}
+
+/* Secondary image floating card */
+.welcome-img-secondary {
+  position: absolute;
+  bottom: 48px;
+  right: -36px;
+  width: 220px;
+  height: 160px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  border: 4px solid #fff;
+  z-index: 3;
+}
+
+.welcome-img-secondary img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Year established float card */
+.welcome-float-card {
+  position: absolute;
+  top: 48px;
+  right: -28px;
+  background: var(--primary);
+  color: #fff;
+  padding: 28px 32px;
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(7, 81, 51, 0.35);
+  z-index: 3;
+  min-width: 160px;
+}
+
+.welcome-float-num {
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.welcome-float-sub {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.welcome-float-bar {
+  width: 32px;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 10px;
+}
+
+.welcome-float-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+}
+
+/* ===== Right text block ===== */
+.welcome-text {
+  padding: 96px 72px 96px 80px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  flex-shrink: 0;
-  font-size: 24px;
 }
 
-.feature-content h3 {
-  font-size: 19px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: var(--text-dark);
+.welcome-text .section-title {
+  font-size: 52px;
+  margin-bottom: 20px;
 }
 
-.feature-content p {
-  font-size: 15px;
+.welcome-em {
+  font-style: italic;
+  color: var(--primary);
+  font-style: italic;
+}
+
+/* Pull quote */
+.welcome-quote {
+  position: relative;
+  padding: 20px 24px 20px 28px;
+  border-left: 3px solid var(--accent);
+  margin: 28px 0 32px;
+  background: var(--bg-light);
+  border-radius: 0 10px 10px 0;
+  font-size: 16px;
+  line-height: 1.65;
   color: var(--text-gray);
-  line-height: 1.6;
+  font-style: italic;
 }
 
-@media (max-width: 1024px) {
-  .welcome-section {
-    padding: 80px 24px;
-  }
-
-  .welcome-grid {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-
-  .welcome-badge {
-    right: 20px;
-    bottom: 20px;
-  }
+.welcome-quote-mark {
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  font-size: 56px;
+  color: var(--accent);
+  font-family: Georgia, serif;
+  line-height: 1;
+  opacity: 0.4;
 }
 
-@media (max-width: 768px) {
-  .welcome-section {
-    padding: 64px 20px;
+/* Pill tags */
+.welcome-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.welcome-pill {
+  background: var(--bg-light);
+  border: 1px solid var(--border-light);
+  color: var(--text-dark);
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.welcome-pill:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+/* CTA link */
+.welcome-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 2px;
+  transition: gap 0.25s ease, opacity 0.25s;
+  width: fit-content;
+}
+
+.welcome-cta:hover {
+  gap: 16px;
+  opacity: 0.75;
+}
+
+/* ===== Reveal animations ===== */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-48px);
+  transition: opacity 0.85s cubic-bezier(0.16,1,0.3,1),
+              transform 0.85s cubic-bezier(0.16,1,0.3,1);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(48px);
+  transition: opacity 0.85s cubic-bezier(0.16,1,0.3,1),
+              transform 0.85s cubic-bezier(0.16,1,0.3,1);
+  transition-delay: 0.15s;
+}
+
+.reveal-left.in-view,
+.reveal-right.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1200px) {
+  .welcome-text { padding: 80px 48px; }
+  .welcome-text .section-title { font-size: 42px; }
+}
+
+@media (max-width: 960px) {
+  .welcome-layout { grid-template-columns: 1fr; }
+
+  .welcome-media {
+    height: 480px;
+    position: relative;
   }
 
-  .welcome-grid {
-    gap: 48px;
-  }
+  .welcome-img-secondary { display: none; }
+  .welcome-float-card { right: 24px; top: 24px; }
+  .welcome-text { padding: 64px 32px; }
+}
 
-  /* Keep badge inside image, smaller */
-  .welcome-badge {
-    right: 12px;
-    bottom: 12px;
-    padding: 20px;
-  }
-
-  .badge-number {
-    font-size: 36px;
-  }
-
-  .badge-text {
-    font-size: 12px;
-  }
-
-  .feature-content h3 {
-    font-size: 17px;
-  }
+@media (max-width: 600px) {
+  .welcome-media { height: 320px; }
+  .welcome-float-card { display: none; }
+  .welcome-text { padding: 48px 24px; }
+  .welcome-text .section-title { font-size: 30px; }
 }

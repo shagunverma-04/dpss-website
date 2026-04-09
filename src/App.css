@@ -1,3 +1,6 @@
+/* ===== Google Fonts — Cormorant + Inter ===== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -10,95 +13,132 @@
   --primary-dark: #054128;
   --secondary: #8B7355;
   --accent: #D4A574;
+  --accent-dark: #b8895a;
   --bg-light: #FAF8F5;
   --bg-cream: #F5F2ED;
   --bg-white: #FFFFFF;
-  --text-dark: #2C2C2C;
+  --text-dark: #1a1a1a;
   --text-gray: #6B6B6B;
   --border-light: #E8E4DE;
+
+  /* Font families */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-family: var(--font-body);
   line-height: 1.6;
   color: var(--text-dark);
   background-color: var(--bg-white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* ===== Layout Utilities ===== */
 .section-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 48px;
 }
 
 .section-label {
+  font-family: var(--font-body);
   color: var(--primary);
   font-weight: 700;
-  font-size: 14px;
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 20px;
+  letter-spacing: 3.5px;
+  margin-bottom: 18px;
+  display: block;
 }
 
+.section-label--light {
+  color: var(--accent);
+}
+
+/* Display titles use Cormorant */
 .section-title {
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 28px;
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.08;
+  margin-bottom: 24px;
   color: var(--text-dark);
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
+}
+
+.section-title--white {
+  color: #fff;
 }
 
 .section-description {
-  font-size: 18px;
-  line-height: 1.8;
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.85;
   color: var(--text-gray);
   margin-bottom: 36px;
+  font-weight: 400;
 }
 
 .section-header-center {
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto 80px;
+  max-width: 780px;
+  margin: 0 auto 72px;
 }
 
-/* Tablet */
+/* ===== Scroll Reveal ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-48px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left.in-view { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(48px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: 0.15s;
+}
+.reveal-right.in-view { opacity: 1; transform: translateX(0); }
+
+.delay-1 { transition-delay: 0.1s !important; }
+.delay-2 { transition-delay: 0.2s !important; }
+.delay-3 { transition-delay: 0.3s !important; }
+.delay-4 { transition-delay: 0.4s !important; }
+.delay-5 { transition-delay: 0.5s !important; }
+.delay-6 { transition-delay: 0.6s !important; }
+
+/* ===== Responsive ===== */
 @media (max-width: 1024px) {
-  .section-title {
-    font-size: 40px;
-  }
-
-  .section-header-center {
-    margin-bottom: 56px;
-  }
+  .section-title { font-size: 46px; }
+  .section-header-center { margin-bottom: 56px; }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
-  .section-container {
-    padding: 0 20px;
-  }
-
-  .section-title {
-    font-size: 30px;
-    letter-spacing: -0.5px;
-  }
-
-  .section-description {
-    font-size: 15px;
-  }
-
-  .section-header-center {
-    margin-bottom: 40px;
-  }
+  .section-container { padding: 0 24px; }
+  .section-title { font-size: 36px; }
+  .section-description { font-size: 15px; }
+  .section-header-center { margin-bottom: 40px; }
 }
 
 @media (max-width: 480px) {
-  .section-container {
-    padding: 0 16px;
-  }
-
-  .section-title {
-    font-size: 26px;
-  }
+  .section-container { padding: 0 16px; }
+  .section-title { font-size: 30px; }
 }
