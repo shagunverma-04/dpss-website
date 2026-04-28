@@ -236,6 +236,9 @@
 @media (max-width: 600px) {
   .welcome-media { height: 320px; }
   .welcome-float-card { display: none; }
-  .welcome-text { padding: 48px 24px; }
-  .welcome-text .section-title { font-size: 30px; }
+  .welcome-text { padding: 48px 20px; }
+  .welcome-text .section-title { font-size: 28px; }
+  .welcome-quote { padding: 16px 18px 16px 22px; font-size: 15px; }
+  .welcome-pills { gap: 8px; margin-bottom: 28px; }
+  .welcome-pill { font-size: 12px; padding: 7px 14px; }
 }

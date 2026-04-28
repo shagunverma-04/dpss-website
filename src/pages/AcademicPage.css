@@ -129,7 +129,14 @@
 }
 
 .fee-banner-icon {
-  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: rgba(7, 81, 51, 0.08);
+  color: var(--primary);
   flex-shrink: 0;
   line-height: 1;
 }
@@ -187,7 +194,14 @@
 }
 
 .cert-icon {
-  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: rgba(7, 81, 51, 0.08);
+  color: var(--primary);
   margin-bottom: 20px;
 }
 
@@ -271,7 +285,11 @@
 }
 
 .curriculum-badge-icon {
-  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  line-height: 1;
 }
 
 .curriculum-body {
@@ -436,7 +454,13 @@
   .fee-banner {
     flex-direction: column;
     gap: 14px;
-    padding: 20px;
+    padding: 22px;
+    align-items: flex-start;
+  }
+
+  .fee-banner-icon {
+    width: 48px;
+    height: 48px;
   }
 
   .curriculum-photo-wrap {
@@ -456,15 +480,43 @@
 /* Small mobile */
 @media (max-width: 480px) {
   .academic-hero-title {
-    font-size: 28px;
+    font-size: 26px;
+  }
+
+  .academic-hero-sub {
+    font-size: 14px;
   }
 
   .cert-card {
-    padding: 28px 24px;
+    padding: 24px 20px;
   }
 
   .guideline-item {
     padding: 16px 18px;
     gap: 12px;
+  }
+
+  .guideline-text {
+    font-size: 13.5px;
+  }
+
+  .fee-banner {
+    padding: 18px 16px;
+  }
+
+  .fee-banner-content h3 {
+    font-size: 17px;
+  }
+
+  .fee-cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .curriculum-photo-badge {
+    bottom: 12px;
+    left: 12px;
+    padding: 6px 14px;
+    font-size: 11.5px;
   }
 }

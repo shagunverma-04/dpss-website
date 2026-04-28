@@ -108,6 +108,69 @@ const AdmissionsPage = ({ onNavigate }) => {
         ))}
       </div>
 
+      {/* Section: Director's Desk */}
+      <section className="adm-section bg-white">
+        <div className="section-container">
+          <div className="director-layout">
+            <div className="director-media">
+              <div className="director-img-wrap">
+                <img
+                  src="img/director.jpg"
+                  alt="Director, DPS Robertsganj"
+                  className="director-img"
+                  onError={(e) => { e.target.src = 'img/principal.JPG'; }}
+                />
+              </div>
+              <div className="director-name-card">
+                <div className="director-name-role">From the Director's Desk</div>
+                <div className="director-name-school">DPS Robertsganj</div>
+              </div>
+              <div className="director-accent-block" />
+            </div>
+
+            <div className="director-content">
+              <span className="section-label">Director's Message</span>
+
+              <blockquote className="director-pull-quote">
+                <span className="director-quote-mark">"</span>
+                Education is not the filling of a vessel, but the kindling of a flame — and at DPS Robertsganj, we light it with care, courage, and conviction.
+              </blockquote>
+
+              <div className="director-divider" />
+
+              <div className="director-body">
+                <p>
+                  Welcome to Delhi Public School, Robertsganj — an institution built on the
+                  belief that every child carries a spark of something extraordinary. As Director,
+                  it is my privilege to guide a school that nurtures not just bright minds, but
+                  thoughtful, principled, and resilient young people.
+                </p>
+                <p>
+                  Our admissions process is more than a formality — it is an invitation to
+                  partner with us in shaping your child's future. We seek families who value
+                  curiosity, character, and commitment to learning, and we promise an
+                  environment where each student is seen, supported, and challenged to grow.
+                </p>
+                <p>
+                  As you consider DPS Robertsganj for your child, I assure you of our continued
+                  dedication to academic excellence, holistic development, and the timeless
+                  values that build lifelong success. We look forward to welcoming you into
+                  our family.
+                </p>
+              </div>
+
+              <div className="director-signature">
+                <div className="director-sig-line" />
+                <div>
+                  <div className="director-sig-name">The Director</div>
+                  <div className="director-sig-school">Delhi Public Secondary School, Robertsganj</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Section 1: Why DPS */}
       <section className="adm-section bg-light">
         <div className="section-container">
