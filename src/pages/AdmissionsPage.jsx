@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './AdmissionsPage.css';
+import Icon from '../components/Icon';
 
 const AdmissionsPage = ({ onNavigate }) => {
   const [openFaq, setOpenFaq] = useState(null);
@@ -7,44 +8,44 @@ const AdmissionsPage = ({ onNavigate }) => {
   const steps = [
     {
       num: '01',
-      icon: '📋',
+      iconName: 'fileText',
       title: 'Collect the Prospectus',
       text: 'Visit the school office during working hours (Mon–Sat, 8:00 AM – 3:00 PM) to collect the admission prospectus and registration form. Alternatively, request one via email.'
     },
     {
       num: '02',
-      icon: '✍️',
+      iconName: 'clipboardList',
       title: 'Submit the Application',
       text: 'Complete the registration form and submit it along with the required documents at the school office. Ensure all documents are self-attested and in order before submission.'
     },
     {
       num: '03',
-      icon: '🧑‍💼',
+      iconName: 'users',
       title: 'Interaction & Assessment',
       text: 'Shortlisted students and their parents will be called for a brief interaction with the Principal. This helps us understand the child\'s aptitude and match them to the right class.'
     },
     {
       num: '04',
-      icon: '✅',
+      iconName: 'checkCircle',
       title: 'Admission Confirmation',
       text: 'Upon successful completion of the interaction, an admission offer is made. Fees must be deposited within the stipulated time to confirm the seat. A welcome kit is provided on confirmation.'
     }
   ];
 
   const documents = [
-    { icon: '🏥', title: 'Birth Certificate', text: 'Original birth certificate issued by the Municipal Authority or hospital.' },
-    { icon: '📸', title: 'Passport Photographs', text: '4 recent passport-size photographs of the child and 2 of each parent/guardian.' },
-    { icon: '🏫', title: 'Previous School Records', text: 'Last class result card/report card and Transfer Certificate from the previous school.' },
-    { icon: '📍', title: 'Address Proof', text: 'Any government-issued document confirming the current residential address of the family.' },
-    { icon: '🪪', title: 'Aadhar Card', text: 'Aadhar card copy of the student and both parents/guardians.' },
-    { icon: '💉', title: 'Medical / Vaccination Record', text: 'Up-to-date vaccination record from a recognised medical authority.' }
+    { iconName: 'activity',       title: 'Birth Certificate',           text: 'Original birth certificate issued by the Municipal Authority or hospital.' },
+    { iconName: 'camera',         title: 'Passport Photographs',        text: '4 recent passport-size photographs of the child and 2 of each parent/guardian.' },
+    { iconName: 'graduationCap',  title: 'Previous School Records',     text: 'Last class result card/report card and Transfer Certificate from the previous school.' },
+    { iconName: 'mapPin',         title: 'Address Proof',               text: 'Any government-issued document confirming the current residential address of the family.' },
+    { iconName: 'creditCard',     title: 'Aadhar Card',                 text: 'Aadhar card copy of the student and both parents/guardians.' },
+    { iconName: 'activity',       title: 'Medical / Vaccination Record',text: 'Up-to-date vaccination record from a recognised medical authority.' }
   ];
 
   const highlights = [
-    { stat: '2000', label: 'Established', sub: 'A legacy of trust' },
-    { stat: 'CBSE', label: 'Affiliated', sub: 'Central Board curriculum' },
-    { stat: '1000+', label: 'Students', sub: 'A thriving community' },
-    { stat: '100%', label: 'Board Results', sub: 'Consistent excellence' }
+    { stat: '2017', label: 'Established', sub: 'A legacy of trust' },
+    { stat: 'CBSE', label: 'Affiliated',  sub: 'Central Board curriculum' },
+    { stat: '1000+',label: 'Students',    sub: 'A thriving community' },
+    { stat: '100%', label: 'Board Results',sub: 'Consistent excellence' }
   ];
 
   const faqs = [
@@ -76,13 +77,13 @@ const AdmissionsPage = ({ onNavigate }) => {
       {/* Hero */}
       <div className="admissions-hero">
         <img
-          src="img/484810766_967083908881871_3601280579614317961_n.jpg"
+          src="img/63baa5c7-11a8-45cd-b3b6-7a814f90a1b6.jpg"
           alt="DPS Robertsganj Campus"
           className="admissions-hero-bg-img"
         />
         <div className="admissions-hero-overlay" />
         <div className="section-container admissions-hero-content">
-          <div className="section-label">Admissions 2025–26</div>
+          <div className="section-label">Admissions 2026-27</div>
           <h1 className="admissions-hero-title">Your Child's Journey<br />Starts Here</h1>
           <p className="admissions-hero-sub">
             Joining the DPS Robertsganj family is the first step toward a future built on knowledge,
@@ -91,7 +92,7 @@ const AdmissionsPage = ({ onNavigate }) => {
           </p>
           <div className="admissions-hero-actions">
             <a href="mailto:delhipublicschoolrobertsganj@gmail.com" className="btn-adm-primary">Enquire Now</a>
-            <a href="tel:+919820967960" className="btn-adm-secondary">Call Us: +91 98209 67960</a>
+            <a href="tel:+917839183961" className="btn-adm-secondary">Call Us: +91 78391 83961</a>
           </div>
         </div>
       </div>
@@ -130,12 +131,14 @@ const AdmissionsPage = ({ onNavigate }) => {
             </div>
             <div className="adm-why-image">
               <img
-                src="img/477798227_941798504743745_5546827519590064483_n.jpg"
+                src="img/475663698_933237972266465_6798402053272925416_n.jpg"
                 alt="Students in classroom"
                 className="adm-why-photo"
               />
               <div className="adm-why-badge">
-                <span className="adm-why-badge-icon">🏆</span>
+                <span className="adm-why-badge-icon">
+                  <Icon name="trophy" size={20} />
+                </span>
                 <span>100% Board Results</span>
               </div>
             </div>
@@ -159,7 +162,9 @@ const AdmissionsPage = ({ onNavigate }) => {
             {steps.map((step, i) => (
               <div key={i} className="adm-step-card">
                 <div className="adm-step-header">
-                  <div className="adm-step-icon">{step.icon}</div>
+                  <div className="adm-step-icon">
+                    <Icon name={step.iconName} size={28} />
+                  </div>
                   <div className="adm-step-num">{step.num}</div>
                 </div>
                 <h3 className="adm-step-title">{step.title}</h3>
@@ -186,7 +191,9 @@ const AdmissionsPage = ({ onNavigate }) => {
           <div className="adm-docs-grid">
             {documents.map((doc, i) => (
               <div key={i} className="adm-doc-card">
-                <div className="adm-doc-icon">{doc.icon}</div>
+                <div className="adm-doc-icon">
+                  <Icon name={doc.iconName} size={26} />
+                </div>
                 <h3 className="adm-doc-title">{doc.title}</h3>
                 <p className="adm-doc-text">{doc.text}</p>
               </div>
@@ -199,12 +206,14 @@ const AdmissionsPage = ({ onNavigate }) => {
       <section className="adm-section bg-green-tint">
         <div className="section-container">
           <div className="adm-info-banner">
-            <div className="adm-info-icon">📅</div>
+            <div className="adm-info-icon">
+              <Icon name="calendar" size={48} />
+            </div>
             <div className="adm-info-body">
-              <div className="section-label">Session 2025–26</div>
+              <div className="section-label">Session 2026-27</div>
               <h2 className="adm-info-title">Admissions Are Now Open</h2>
               <p className="adm-info-text">
-                Enquiries for the 2025–26 academic session are being actively accepted.
+                Enquiries for the 2026-27 academic session are being actively accepted.
                 Seats fill up quickly — we encourage early enquiry to avoid disappointment.
                 The school office is open Monday to Saturday, 8:00 AM – 3:00 PM.
               </p>
@@ -212,8 +221,8 @@ const AdmissionsPage = ({ onNavigate }) => {
                 <a href="mailto:delhipublicschoolrobertsganj@gmail.com" className="btn-adm-primary">
                   Send an Email
                 </a>
-                <a href="tel:+919820967960" className="btn-adm-outline">
-                  +91 98209 67960
+                <a href="tel:+917839183961" className="btn-adm-outline">
+                  +91 78391 83961
                 </a>
               </div>
             </div>
@@ -242,7 +251,9 @@ const AdmissionsPage = ({ onNavigate }) => {
               >
                 <div className="adm-faq-q">
                   <span>{faq.q}</span>
-                  <span className="adm-faq-toggle">{openFaq === i ? '−' : '+'}</span>
+                  <span className="adm-faq-toggle">
+                    <Icon name={openFaq === i ? 'minus' : 'plus'} size={20} />
+                  </span>
                 </div>
                 {openFaq === i && <p className="adm-faq-a">{faq.a}</p>}
               </div>

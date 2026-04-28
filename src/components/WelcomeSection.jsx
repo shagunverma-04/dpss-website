@@ -1,9 +1,19 @@
 import React from 'react';
 import './WelcomeSection.css';
 import useInView from '../hooks/useInView';
+import Icon from './Icon';
 
 const WelcomeSection = () => {
   const [sectionRef, inView] = useInView({ threshold: 0.1 });
+
+  const pills = [
+    { icon: 'graduationCap', label: 'CBSE Curriculum' },
+    { icon: 'target',        label: 'Archery & Shooting' },
+    { icon: 'cpu',           label: 'Robotics Lab' },
+    { icon: 'waves',         label: 'Swimming Pool' },
+    { icon: 'monitor',       label: 'Smart Classrooms' },
+    { icon: 'bookOpen',      label: 'Modern Library' },
+  ];
 
   return (
     <section className="welcome-section" ref={sectionRef}>
@@ -14,15 +24,15 @@ const WelcomeSection = () => {
           <div className="welcome-img-main">
             <img src="img/photo2.jpg" alt="DPS Robertsganj Campus" />
           </div>
-          <div className="welcome-img-secondary">
+          {/*<div className="welcome-img-secondary">
             <img src="img/477798227_941798504743745_5546827519590064483_n.jpg" alt="Smart Classrooms" />
-          </div>
+          </div>*/}
           {/* Floating card */}
           <div className="welcome-float-card">
-            <div className="welcome-float-num">2000</div>
+            <div className="welcome-float-num">2017</div>
             <div className="welcome-float-sub">Year Established</div>
             <div className="welcome-float-bar" />
-            <div className="welcome-float-desc">25+ years of shaping futures</div>
+            <div className="welcome-float-desc">10+ years of shaping futures</div>
           </div>
         </div>
 
@@ -35,7 +45,7 @@ const WelcomeSection = () => {
           </h2>
 
           <p className="section-description">
-            Delhi Public Secondary School, Robertsganj has been building futures since 2000.
+            Delhi Public Secondary School, Robertsganj has been building futures since 2017.
             We combine rigorous CBSE academics with life skills, character education,
             and world-class infrastructure — because true excellence is about the whole child.
           </p>
@@ -48,12 +58,12 @@ const WelcomeSection = () => {
 
           {/* Feature pills */}
           <div className="welcome-pills">
-            <span className="welcome-pill">🎓 CBSE Curriculum</span>
-            <span className="welcome-pill">🏹 Archery & Shooting</span>
-            <span className="welcome-pill">🤖 Robotics Lab</span>
-            <span className="welcome-pill">🏊 Swimming Pool</span>
-            <span className="welcome-pill">💻 Smart Classrooms</span>
-            <span className="welcome-pill">📚 Modern Library</span>
+            {pills.map((pill, i) => (
+              <span key={i} className="welcome-pill">
+                <Icon name={pill.icon} size={14} />
+                {pill.label}
+              </span>
+            ))}
           </div>
 
           <a href="#" className="welcome-cta">

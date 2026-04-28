@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ContactPage.css';
+import Icon from '../components/Icon';
 
 const ContactPage = () => {
   const [form, setForm] = useState({ name: '', phone: '', email: '', subject: '', message: '' });
@@ -16,15 +17,15 @@ const ContactPage = () => {
 
   const contactCards = [
     {
-      icon: '📞',
+      iconName: 'phone',
       title: 'Call Us',
-      primary: '+91 98209 67960',
+      primary: '+91 78391 83961',
       secondary: 'Mon–Sat, 8:00 AM – 3:00 PM',
-      action: 'tel:+919820967960',
+      action: 'tel:+917839183961',
       actionLabel: 'Call Now'
     },
     {
-      icon: '✉️',
+      iconName: 'mail',
       title: 'Email Us',
       primary: 'delhipublicschoolrobertsganj@gmail.com',
       secondary: 'We aim to respond within one working day',
@@ -32,15 +33,15 @@ const ContactPage = () => {
       actionLabel: 'Send Email'
     },
     {
-      icon: '📍',
+      iconName: 'mapPin',
       title: 'Visit Us',
-      primary: 'Civil Lines, Robertsganj',
-      secondary: 'Sonbhadra, Uttar Pradesh',
-      action: 'https://maps.google.com/?q=Robertsganj,Sonbhadra,Uttar+Pradesh',
+      primary: 'Village Bijauli, near Railway Crossing',
+      secondary: 'Sonbhadra, Uttar Pradesh - 231216',
+      action: 'https://maps.app.goo.gl/TqCvDVXF3e6H5bZX9',
       actionLabel: 'Get Directions'
     },
     {
-      icon: '🕐',
+      iconName: 'clock',
       title: 'Office Hours',
       primary: 'Monday to Saturday',
       secondary: '8:00 AM – 3:00 PM',
@@ -60,10 +61,17 @@ const ContactPage = () => {
   ];
 
   const departments = [
-    { icon: '🏫', name: 'Admissions Office', detail: 'New enrolments, registration forms, seat availability' },
-    { icon: '💰', name: 'Accounts & Fee', detail: 'Fee structure, payment schedules, receipts' },
-    { icon: '📋', name: 'Academic Office', detail: 'Timetables, results, TC & document requests' },
-    { icon: '🚌', name: 'Transport Desk', detail: 'Bus routes, transport fees, schedule queries' }
+    { iconName: 'building',       name: 'Admissions Office', detail: 'New enrolments, registration forms, seat availability' },
+    { iconName: 'dollarSign',     name: 'Accounts & Fee',    detail: 'Fee structure, payment schedules, receipts' },
+    { iconName: 'clipboardList',  name: 'Academic Office',   detail: 'Timetables, results, TC & document requests' },
+    { iconName: 'bus',            name: 'Transport Desk',    detail: 'Bus routes, transport fees, schedule queries' }
+  ];
+
+  const addressRows = [
+    { iconName: 'mapPin', label: 'Address', value: 'Village Bijauli, near Railway Crosssing \n Sonbhadra, Uttar pradesh - 231216' },
+    { iconName: 'phone',  label: 'Phone',   value: '+91 78391 83961' },
+    { iconName: 'mail',   label: 'Email',   value: 'delhipublicschoolrobertsganj@gmail.com' },
+    { iconName: 'clock',  label: 'Office Hours', value: 'Monday – Saturday\n8:00 AM – 3:00 PM' },
   ];
 
   return (
@@ -72,7 +80,7 @@ const ContactPage = () => {
       {/* Hero */}
       <div className="ct-hero">
         <img
-          src="img/photo1.jpg"
+          src="img/475490992_933220515601544_5135740570619108852_n.jpg"
           alt="DPS Robertsganj"
           className="ct-hero-bg-img"
         />
@@ -93,7 +101,9 @@ const ContactPage = () => {
           <div className="ct-cards-grid">
             {contactCards.map((card, i) => (
               <div key={i} className="ct-card">
-                <div className="ct-card-icon">{card.icon}</div>
+                <div className="ct-card-icon">
+                  <Icon name={card.iconName} size={24} />
+                </div>
                 <h3 className="ct-card-title">{card.title}</h3>
                 <p className="ct-card-primary">{card.primary}</p>
                 <p className="ct-card-secondary">{card.secondary}</p>
@@ -124,7 +134,9 @@ const ContactPage = () => {
 
               {submitted ? (
                 <div className="ct-success">
-                  <div className="ct-success-icon">✓</div>
+                  <div className="ct-success-icon">
+                    <Icon name="checkCircle" size={36} />
+                  </div>
                   <h3 className="ct-success-title">Message Received</h3>
                   <p className="ct-success-text">
                     Thank you for reaching out. Our team will be in touch with you shortly.
@@ -226,7 +238,9 @@ const ContactPage = () => {
                 <div className="ct-dept-list">
                   {departments.map((dept, i) => (
                     <div key={i} className="ct-dept-item">
-                      <div className="ct-dept-icon">{dept.icon}</div>
+                      <div className="ct-dept-icon">
+                        <Icon name={dept.iconName} size={18} />
+                      </div>
                       <div>
                         <div className="ct-dept-name">{dept.name}</div>
                         <div className="ct-dept-detail">{dept.detail}</div>
@@ -272,44 +286,30 @@ const ContactPage = () => {
                 office hours — no appointment is required for general enquiries.
               </p>
               <div className="ct-address-block">
-                <div className="ct-address-row">
-                  <span className="ct-addr-icon">📍</span>
-                  <div>
-                    <div className="ct-addr-label">Address</div>
-                    <div className="ct-addr-value">Civil Lines, Robertsganj<br />Sonbhadra, Uttar Pradesh</div>
+                {addressRows.map((row, i) => (
+                  <div key={i} className="ct-address-row">
+                    <span className="ct-addr-icon">
+                      <Icon name={row.iconName} size={17} />
+                    </span>
+                    <div>
+                      <div className="ct-addr-label">{row.label}</div>
+                      <div className="ct-addr-value">{row.value.split('\n').map((line, j) => (
+                        <span key={j}>{line}{j < row.value.split('\n').length - 1 && <br />}</span>
+                      ))}</div>
+                    </div>
                   </div>
-                </div>
-                <div className="ct-address-row">
-                  <span className="ct-addr-icon">📞</span>
-                  <div>
-                    <div className="ct-addr-label">Phone</div>
-                    <div className="ct-addr-value">+91 98209 67960</div>
-                  </div>
-                </div>
-                <div className="ct-address-row">
-                  <span className="ct-addr-icon">✉️</span>
-                  <div>
-                    <div className="ct-addr-label">Email</div>
-                    <div className="ct-addr-value">delhipublicschoolrobertsganj@gmail.com</div>
-                  </div>
-                </div>
-                <div className="ct-address-row">
-                  <span className="ct-addr-icon">🕐</span>
-                  <div>
-                    <div className="ct-addr-label">Office Hours</div>
-                    <div className="ct-addr-value">Monday – Saturday<br />8:00 AM – 3:00 PM</div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
             <div className="ct-map-col">
               <div className="ct-map-placeholder">
                 <div className="ct-map-inner">
-                  <div className="ct-map-pin">📍</div>
+                  <div className="ct-map-pin">
+                    <Icon name="mapPin" size={40} style={{ img:'img/photo1.jpg' }} />
+                  </div>
                   <div className="ct-map-name">DPS Robertsganj</div>
-                  <div className="ct-map-addr">Civil Lines, Robertsganj, Sonbhadra, UP</div>
                   <a
-                    href="https://maps.google.com/?q=Robertsganj,Sonbhadra,Uttar+Pradesh"
+                    href="https://maps.app.goo.gl/TqCvDVXF3e6H5bZX9"
                     target="_blank"
                     rel="noreferrer"
                     className="ct-map-btn"

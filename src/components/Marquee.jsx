@@ -2,13 +2,13 @@ import React from 'react';
 import './Marquee.css';
 
 const items = [
-  'Excellence Since 2000',
+  'Excellence Since 2017',
   'CBSE Affiliated',
   '100% Board Results',
   '1000+ Students',
   '50+ Expert Faculty',
   'Archery · Robotics · Swimming',
-  'Admissions Open 2025–26',
+  'Admissions Open 2026–27',
   'Holistic Education',
   'Smart Classrooms',
   'Character · Courage · Creativity',

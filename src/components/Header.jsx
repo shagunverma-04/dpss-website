@@ -23,6 +23,7 @@ const Header = ({ currentPage, onNavigate }) => {
     { text: 'Admissions',   page: 'admissions' },
     { text: 'Student Life', page: 'student-life' },
     { text: 'News & Events',page: 'news-events' },
+    { text: 'Gallery',      page: 'gallery' },
     { text: 'Contact',      page: 'contact' },
   ];
 
@@ -50,7 +51,7 @@ const Header = ({ currentPage, onNavigate }) => {
           </div>
           <div className="nav-logo-text">
             <span className="nav-logo-name">DPS Robertsganj</span>
-            <span className="nav-logo-tag">Est. 2000</span>
+            <span className="nav-logo-tag">Est. 2017</span>
           </div>
         </a>
 

@@ -147,7 +147,14 @@
 }
 
 .ne-card-icon {
-  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(7, 81, 51, 0.08);
+  color: var(--primary);
   line-height: 1;
   flex-shrink: 0;
 }
@@ -303,7 +310,14 @@
 }
 
 .ne-ach-icon {
-  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: rgba(7, 81, 51, 0.08);
+  color: var(--primary);
   margin-bottom: 16px;
   line-height: 1;
 }
@@ -364,9 +378,16 @@
 }
 
 .ne-contact-icon {
-  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(7, 81, 51, 0.08);
+  color: var(--primary);
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 0;
   line-height: 1;
 }
 

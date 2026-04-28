@@ -18,10 +18,10 @@ const Hero = ({ onNavigate }) => {
 
   return (
     <section className="hero">
-lo
+
       {/* Full-bleed background */}
       <div className="hero-bg">
-        <img src="img/photo1.jpg" alt="DPS Robertsganj" className="hero-bg-img" />
+        <img src="img/ChatGPT Image Apr 28, 2026, 01_51_08 PM.png" alt="DPS Robertsganj" className="hero-bg-img" />
       </div>
 
       {/* Layered overlays */}
@@ -35,7 +35,7 @@ lo
         {/* Eyebrow pill */}
         <div className="hero-eyebrow">
           <span className="hero-eyebrow-dot" />
-          Admissions Open · Session 2025–26
+          Admissions Open · Session 2026–27
         </div>
 
         {/* Display heading — Cormorant */}
@@ -106,7 +106,7 @@ lo
         </div>
         <div className="hero-strip-divider" />
         <div className="hero-stat">
-          <span className="hero-stat-num">25+</span>
+          <span className="hero-stat-num">10+</span>
           <span className="hero-stat-label">Years of Excellence</span>
         </div>
 

@@ -28,8 +28,8 @@ const Footer = ({ onNavigate }) => {
 
   return (
     <footer className="footer">
-
-      {/* Top accent stripe */}
+{/*)
+      {/* Top accent stripe 
       <div className="footer-top-stripe">
         <div className="footer-stripe-inner">
           <div className="footer-stripe-stat">
@@ -53,7 +53,7 @@ const Footer = ({ onNavigate }) => {
           </div>
         </div>
       </div>
-
+*/}
       {/* Main footer body */}
       <div className="footer-body">
         <div className="footer-container">
@@ -156,7 +156,7 @@ const Footer = ({ onNavigate }) => {
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
                     </svg>
                   </span>
-                  <span>Civil Lines, Robertsganj,<br/>Sonbhadra, Uttar Pradesh</span>
+                  <span>Village Bijauli, near railwway Crossing<br/>Sonbhadra, Uttar Pradesh</span>
                 </li>
                 <li>
                   <span className="contact-icon">
@@ -164,7 +164,7 @@ const Footer = ({ onNavigate }) => {
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.67 3.4 2 2 0 0 1 3.66 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.86a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
                     </svg>
                   </span>
-                  <a href="tel:+919820967960">+91 98209 67960</a>
+                  <a href="tel:+917839183961">+91 78391 83961</a>
                 </li>
                 <li>
                   <span className="contact-icon">
@@ -198,7 +198,7 @@ const Footer = ({ onNavigate }) => {
           <div className="footer-bottom-right">
             <span>CBSE Affiliated</span>
             <span className="bottom-dot" />
-            <span>Est. 2000</span>
+            <span>Est. 2017</span>
             <span className="bottom-dot" />
             <span>Robertsganj, UP</span>
           </div>

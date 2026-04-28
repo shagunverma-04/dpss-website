@@ -12,7 +12,7 @@ const PrincipalSection = () => {
         {/* Left: image block */}
         <div className={`principal-media ${inView ? 'ps-reveal-left in-view' : 'ps-reveal-left'}`}>
           <div className="principal-img-wrap">
-            <img src="img/director.jpg" alt="Principal, DPS Robertsganj" className="principal-img" />
+            <img src="img\principal.JPG" alt="Principal, DPS Robertsganj" className="principal-img" />
           </div>
           {/* Name card pinned to bottom */}
           <div className="principal-name-card">

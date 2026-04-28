@@ -16,6 +16,7 @@ import AdmissionsPage from './pages/AdmissionsPage';
 import StudentLifePage from './pages/StudentLifePage';
 import NewsEventsPage from './pages/NewsEventsPage';
 import ContactPage from './pages/ContactPage';
+import GalleryPage from './pages/GalleryPage';
 import './App.css';
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
       {currentPage === 'admissions'   && <AdmissionsPage onNavigate={setCurrentPage} />}
       {currentPage === 'student-life' && <StudentLifePage />}
       {currentPage === 'news-events'  && <NewsEventsPage />}
+      {currentPage === 'gallery'      && <GalleryPage />}
       {currentPage === 'contact'      && <ContactPage />}
 
       <Footer onNavigate={setCurrentPage} />

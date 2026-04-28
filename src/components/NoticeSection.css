@@ -84,9 +84,16 @@
   margin-bottom: 20px;
 }
 
-.notice-emoji {
-  font-size: 28px;
-  line-height: 1;
+.notice-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(7, 81, 51, 0.08);
+  color: var(--primary);
+  flex-shrink: 0;
 }
 
 .notice-category {

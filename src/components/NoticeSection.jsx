@@ -1,11 +1,12 @@
 import React from 'react';
 import './NoticeSection.css';
 import useInView from '../hooks/useInView';
+import Icon from './Icon';
 
 const notices = [
   {
     category: 'Admissions',
-    emoji: '🏫',
+    iconName: 'building',
     title: 'Admission Enquiry Open',
     description: 'Applications are now being accepted for the 2025–26 academic year. Limited seats available across all grades. Early enquiry recommended.',
     link: '#',
@@ -13,7 +14,7 @@ const notices = [
   },
   {
     category: 'Resources',
-    emoji: '📄',
+    iconName: 'fileText',
     title: 'Download Brochure',
     description: 'Get comprehensive information about our curriculum, facilities, fee structure, and the complete admission process.',
     link: '#',
@@ -21,7 +22,7 @@ const notices = [
   },
   {
     category: 'Achievement',
-    emoji: '🏆',
+    iconName: 'trophy',
     title: 'Class X Toppers 2024',
     description: 'Congratulations to all our students for achieving outstanding results with 100% pass percentage in CBSE Board Examinations.',
     link: '#',
@@ -58,7 +59,9 @@ const NoticeSection = () => {
               style={{ transitionDelay: `${0.1 + i * 0.12}s`, '--notice-accent': n.accent }}
             >
               <div className="notice-card-top">
-                <span className="notice-emoji">{n.emoji}</span>
+                <span className="notice-icon-wrap">
+                  <Icon name={n.iconName} size={20} />
+                </span>
                 <span className="notice-category">{n.category}</span>
               </div>
               <h3 className="notice-title">{n.title}</h3>

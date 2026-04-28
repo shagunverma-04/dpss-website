@@ -9,7 +9,7 @@ const AcademicPage = () => {
       icon: '🌱',
       color: '#E8F5E9',
       borderColor: '#075133',
-      image: 'img/475532388_934694108787518_3459762227827062139_n.jpg',
+      image: 'img/475503113_933242605599335_5323577677694140088_n.jpg',
       paragraphs: [
         'Our Pre-Primary wing is designed with early childhood at its heart. From Playgroup through LKG and UKG, we nurture each child during the most formative years of their development — a time when the foundation of personality is built and curiosity is at its peak.',
         'Through an open-ended curriculum that blends joyful learning with purposeful growth, children develop social skills, verbal ability, and motor skills via art, craft, and hands-on experiences. We encourage children to think independently, engage with their world, and grow into confident, creative individuals.'
@@ -21,7 +21,7 @@ const AcademicPage = () => {
       icon: '📚',
       color: '#E3F2FD',
       borderColor: '#1565C0',
-      image: 'img/477798227_941798504743745_5546827519590064483_n.jpg',
+      image: 'img/08584007-3c15-4055-b449-48f632ee10bd.jpg',
       paragraphs: [
         'As students step into the Primary wing, learning broadens meaningfully. Aligned with the latest CBSE guidelines, the curriculum covers Mathematics, English, Hindi, Sanskrit, EVS, and Computer Science — complemented by Visual and Performing Arts, Value Education, and General Knowledge.',
         'What sets our Primary programme apart is its rich slate of Life Skills choices: shooting, archery, swimming, robotics, public speaking, clay modelling, and more. Multimedia teaching aids make every lesson engaging, ensuring that learning is always a joyful experience.'
@@ -41,7 +41,7 @@ const AcademicPage = () => {
     }
   ];
 
-  const feeNote = 'The fee structure for Session 2025–26 is outlined below. For detailed information regarding specific fee heads, payment schedules, or any clarifications, please feel free to reach out to the school office. We are happy to assist you.';
+  const feeNote = 'The fee structure for Session 2026-27 is outlined below. For detailed information regarding specific fee heads, payment schedules, or any clarifications, please feel free to reach out to the school office. We are happy to assist you.';
 
   const guidelines = {
     students: [
@@ -99,7 +99,7 @@ const AcademicPage = () => {
       {/* Page Hero — real photo background */}
       <div className="academic-hero">
         <img
-          src="img/photo2.jpg"
+          src="img\52b6dc6f-b3bc-42da-95ba-4f4b46d196bc.JPG"
           alt="DPS Robertsganj Campus"
           className="academic-hero-bg-img"
         />
@@ -121,7 +121,7 @@ const AcademicPage = () => {
           <div className="fee-layout">
             <div className="fee-image-col">
               <img
-                src="img/484810766_967083908881871_3601280579614317961_n.jpg"
+                src="img\475135876_931854365738159_7293315653921356242_n.jpg"
                 alt="DPS Robertsganj School"
                 className="fee-photo"
               />
@@ -133,7 +133,7 @@ const AcademicPage = () => {
               <div className="fee-banner">
                 <div className="fee-banner-icon">🏫</div>
                 <div className="fee-banner-content">
-                  <h3>Fee Structure for Session 2025–26</h3>
+                  <h3>Fee Structure for Session 2026-27</h3>
                   <p>
                     The complete fee schedule is available at the school office. Our team is
                     always ready to walk you through the structure and answer any questions.

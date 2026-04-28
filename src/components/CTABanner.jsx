@@ -1,6 +1,7 @@
 import React from 'react';
 import './CTABanner.css';
 import useInView from '../hooks/useInView';
+import Icon from './Icon';
 
 const CTABanner = ({ onNavigate }) => {
   const [ref, inView] = useInView({ threshold: 0.15 });
@@ -8,17 +9,17 @@ const CTABanner = ({ onNavigate }) => {
   return (
     <section className="cta-section" ref={ref}>
       {/* Photo background */}
-      <img
+      {/*<img
         src="img/484810766_967083908881871_3601280579614317961_n.jpg"
         alt="DPS Robertsganj"
         className="cta-bg-img"
-      />
+      />*/}
       <div className="cta-overlay" />
 
       <div className={`section-container cta-inner ${inView ? 'cta-reveal in-view' : 'cta-reveal'}`}>
         {/* Left: big text */}
         <div className="cta-text">
-          <span className="cta-eyebrow">Session 2025–26</span>
+          <span className="cta-eyebrow">Session 2026–27</span>
           <h2 className="cta-title">
             Begin your child's<br />
             journey to <span className="cta-highlight">excellence</span>
@@ -50,15 +51,15 @@ const CTABanner = ({ onNavigate }) => {
         <div className="cta-card">
           <div className="cta-card-label">Reach Us Directly</div>
           <div className="cta-contact-row">
-            <span className="cta-contact-icon">📞</span>
+            <span className="cta-contact-icon"><Icon name="phone" size={18} /></span>
             <div>
               <div className="cta-contact-title">Call Us</div>
-              <a href="tel:+919820967960" className="cta-contact-val">+91 98209 67960</a>
+              <a href="tel:+9178391 83961" className="cta-contact-val">+91 78391 83961</a>
             </div>
           </div>
           <div className="cta-card-divider" />
           <div className="cta-contact-row">
-            <span className="cta-contact-icon">✉️</span>
+            <span className="cta-contact-icon"><Icon name="mail" size={18} /></span>
             <div>
               <div className="cta-contact-title">Email Us</div>
               <a href="mailto:delhipublicschoolrobertsganj@gmail.com" className="cta-contact-val">delhipublicschoolrobertsganj<br />@gmail.com</a>
@@ -66,7 +67,7 @@ const CTABanner = ({ onNavigate }) => {
           </div>
           <div className="cta-card-divider" />
           <div className="cta-contact-row">
-            <span className="cta-contact-icon">🕐</span>
+            <span className="cta-contact-icon"><Icon name="clock" size={18} /></span>
             <div>
               <div className="cta-contact-title">Office Hours</div>
               <div className="cta-contact-val">Mon–Sat · 8:00 AM – 3:00 PM</div>

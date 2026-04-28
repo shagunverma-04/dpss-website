@@ -48,7 +48,7 @@ const QuickStats = () => {
     { number: '50+',   label: 'Expert Faculty',      desc: 'Qualified educators' },
     { number: '1000+', label: 'Students',             desc: 'Thriving community' },
     { number: '100%',  label: 'Board Results',        desc: 'Consistent excellence' },
-    { number: '25+',   label: 'Years of Excellence',  desc: 'Legacy of trust' },
+    { number: '10+',   label: 'Years of Excellence',  desc: 'Legacy of trust' },
   ];
 
   useEffect(() => {

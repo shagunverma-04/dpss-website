@@ -1,71 +1,72 @@
 import React from 'react';
 import './StudentLifePage.css';
+import Icon from '../components/Icon';
 
 const StudentLifePage = () => {
   const activities = [
     {
-      icon: '🏹',
+      iconName: 'target',
       title: 'Archery',
       text: 'Our dedicated archery range gives students a rare opportunity to develop focus, discipline, and precision — skills that serve them far beyond the range.'
     },
     {
-      icon: '🎯',
+      iconName: 'crosshair',
       title: 'Shooting',
       text: 'One of our signature programmes, shooting teaches students composure, concentration, and the quiet confidence that comes from mastering a demanding sport.'
     },
     {
-      icon: '🏊',
+      iconName: 'waves',
       title: 'Swimming',
       text: 'Our swimming programme ensures that every student graduates with a life skill that builds fitness, confidence, and safety awareness in and around water.'
     },
     {
-      icon: '🤖',
+      iconName: 'cpu',
       title: 'Robotics',
       text: 'In our robotics lab, students design, build, and programme their own machines — sparking creativity and a love for engineering and technology.'
     },
     {
-      icon: '🎤',
+      iconName: 'mic',
       title: 'Public Speaking',
       text: 'Through structured debate, declamation, and presentation sessions, students find their voice, build confidence, and learn to communicate with clarity and conviction.'
     },
     {
-      icon: '🎨',
+      iconName: 'palette',
       title: 'Art & Clay Modelling',
       text: 'Visual and performing arts are woven into everyday school life. From clay modelling to painting, students express creativity and develop fine motor skills.'
     },
     {
-      icon: '⚽',
+      iconName: 'award',
       title: 'Sports & Athletics',
       text: 'A full sports complex supports football, cricket, kabaddi, and athletics. Regular inter-house and inter-school competitions build team spirit and sportsmanship.'
     },
     {
-      icon: '🎵',
+      iconName: 'music',
       title: 'Music & Performing Arts',
       text: 'Students participate in school productions, music performances, and cultural events that celebrate Indian traditions while exploring global artistic forms.'
     }
   ];
 
   const houses = [
-    { name: 'Ganga House', color: '#1565C0', bg: '#E3F2FD', icon: '🔵', values: 'Courage · Honour · Service' },
-    { name: 'Yamuna House', color: '#2E7D32', bg: '#E8F5E9', icon: '🟢', values: 'Integrity · Discipline · Growth' },
-    { name: 'Saraswati House', color: '#F9A825', bg: '#FFFDE7', icon: '🟡', values: 'Wisdom · Creativity · Knowledge' },
-    { name: 'Himalaya House', color: '#C62828', bg: '#FFEBEE', icon: '🔴', values: 'Excellence · Resilience · Pride' }
+    { name: 'Narmada House',     color: '#1565C0', bg: '#E3F2FD', values: 'Courage · Honour · Service' },
+    { name: 'Kaveri House',    color: '#2E7D32', bg: '#E8F5E9', values: 'Integrity · Discipline · Growth' },
+    { name: 'Godavari House', color: '#F9A825', bg: '#FFFDE7', values: 'Wisdom · Creativity · Knowledge' },
+    { name: 'Krishna House',  color: '#C62828', bg: '#FFEBEE', values: 'Excellence · Resilience · Pride' }
   ];
 
   const values = [
-    { num: '01', title: 'Respect for All', text: 'We teach students to treat every person — teacher, peer, or staff — with courtesy, empathy, and genuine respect.' },
-    { num: '02', title: 'Responsibility', text: 'Students are encouraged to own their actions, complete their commitments, and contribute meaningfully to their community.' },
-    { num: '03', title: 'Creativity', text: 'We celebrate original thinking. Students are encouraged to question, imagine, and express themselves through academics and the arts.' },
-    { num: '04', title: 'Resilience', text: 'Life presents challenges. We help students develop the grit, adaptability, and positivity to overcome obstacles and keep growing.' }
+    { num: '01', title: 'Respect for All',  text: 'We teach students to treat every person — teacher, peer, or staff — with courtesy, empathy, and genuine respect.' },
+    { num: '02', title: 'Responsibility',    text: 'Students are encouraged to own their actions, complete their commitments, and contribute meaningfully to their community.' },
+    { num: '03', title: 'Creativity',        text: 'We celebrate original thinking. Students are encouraged to question, imagine, and express themselves through academics and the arts.' },
+    { num: '04', title: 'Resilience',        text: 'Life presents challenges. We help students develop the grit, adaptability, and positivity to overcome obstacles and keep growing.' }
   ];
 
   const events = [
-    { icon: '🇮🇳', title: 'Independence Day & Republic Day', text: 'Grand flag-hoisting ceremonies, cultural performances, and patriotic presentations mark our national celebrations with pride.' },
-    { icon: '🎄', title: 'Annual Day', text: 'Our most anticipated event of the year — a full-day celebration of student talent, with performances across dance, drama, music, and more.' },
-    { icon: '🏅', title: 'Sports Day', text: 'Inter-house competitions across track events, field games, and team sports, culminating in a prize ceremony that celebrates effort and achievement.' },
-    { icon: '📚', title: 'Science & Quiz Fest', text: 'Students showcase projects, compete in quizzes, and demonstrate experiments — nurturing scientific temper and intellectual curiosity.' },
-    { icon: '🎊', title: 'Diwali & Cultural Festivals', text: 'India\'s festivals are celebrated with great enthusiasm — from Diwali rangoli competitions to Holi and Eid, every celebration brings the school community together.' },
-    { icon: '🏫', title: 'Parent-Teacher Meets', text: 'Regular structured PTMs ensure open dialogue between families and teachers — a cornerstone of our collaborative approach to education.' }
+    { iconName: 'flag',      title: 'Independence Day & Republic Day',  text: 'Grand flag-hoisting ceremonies, cultural performances, and patriotic presentations mark our national celebrations with pride.' },
+    { iconName: 'star',      title: 'Annual Day',                       text: 'Our most anticipated event of the year — a full-day celebration of student talent, with performances across dance, drama, music, and more.' },
+    { iconName: 'trophy',    title: 'Sports Day',                       text: 'Inter-house competitions across track events, field games, and team sports, culminating in a prize ceremony that celebrates effort and achievement.' },
+    { iconName: 'bookOpen',  title: 'Science & Quiz Fest',              text: 'Students showcase projects, compete in quizzes, and demonstrate experiments — nurturing scientific temper and intellectual curiosity.' },
+    { iconName: 'music',     title: 'Diwali & Cultural Festivals',      text: 'India\'s festivals are celebrated with great enthusiasm — from Diwali rangoli competitions to Holi and Eid, every celebration brings the school community together.' },
+    { iconName: 'users',     title: 'Parent-Teacher Meets',             text: 'Regular structured PTMs ensure open dialogue between families and teachers — a cornerstone of our collaborative approach to education.' }
   ];
 
   return (
@@ -96,7 +97,7 @@ const StudentLifePage = () => {
           <div className="sl-intro-grid">
             <div className="sl-intro-image-col">
               <img
-                src="img/475532388_934694108787518_3459762227827062139_n.jpg"
+                src="img/476060243_938536555069940_5046232041356029435_n.jpg"
                 alt="Young students learning"
                 className="sl-intro-photo"
               />
@@ -141,7 +142,9 @@ const StudentLifePage = () => {
           <div className="sl-activities-grid">
             {activities.map((act, i) => (
               <div key={i} className="sl-activity-card">
-                <div className="sl-activity-icon">{act.icon}</div>
+                <div className="sl-activity-icon">
+                  <Icon name={act.iconName} size={28} />
+                </div>
                 <h3 className="sl-activity-title">{act.title}</h3>
                 <p className="sl-activity-text">{act.text}</p>
               </div>
@@ -166,7 +169,12 @@ const StudentLifePage = () => {
           <div className="sl-houses-grid">
             {houses.map((house, i) => (
               <div key={i} className="sl-house-card" style={{ '--house-color': house.color, '--house-bg': house.bg }}>
-                <div className="sl-house-icon">{house.icon}</div>
+                <div className="sl-house-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke={house.color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                  </svg>
+                </div>
                 <h3 className="sl-house-name" style={{ color: house.color }}>{house.name}</h3>
                 <p className="sl-house-values">{house.values}</p>
               </div>
@@ -191,7 +199,9 @@ const StudentLifePage = () => {
           <div className="sl-events-grid">
             {events.map((ev, i) => (
               <div key={i} className="sl-event-card">
-                <div className="sl-event-icon">{ev.icon}</div>
+                <div className="sl-event-icon">
+                  <Icon name={ev.iconName} size={26} />
+                </div>
                 <div>
                   <h3 className="sl-event-title">{ev.title}</h3>
                   <p className="sl-event-text">{ev.text}</p>

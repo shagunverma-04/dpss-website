@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './NewsEventsPage.css';
+import Icon from '../components/Icon';
 
 const NewsEventsPage = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -11,7 +12,7 @@ const NewsEventsPage = () => {
       date: 'January 2025',
       title: 'Admissions Open for Session 2025–26',
       text: 'Enquiries for the new academic session are now being accepted. Seats are limited — we encourage early registration. Visit the school office or contact us by phone or email to begin the process.',
-      icon: '🏫'
+      iconName: 'building'
     },
     {
       category: 'results',
@@ -19,7 +20,7 @@ const NewsEventsPage = () => {
       date: 'May 2024',
       title: 'Class X Board Results — Outstanding Performance',
       text: 'We are proud to share that our Class X students delivered an outstanding performance in the CBSE Board Examinations 2024. Congratulations to all students and their families on this achievement.',
-      icon: '🏆'
+      iconName: 'trophy'
     },
     {
       category: 'events',
@@ -27,7 +28,7 @@ const NewsEventsPage = () => {
       date: 'March 2025',
       title: 'Annual Day 2025 — Save the Date',
       text: 'Our much-anticipated Annual Day celebration will be held in March 2025. Students are already in rehearsals for a spectacular evening of performances. Details to be shared via the school diary.',
-      icon: '🎭'
+      iconName: 'star'
     },
     {
       category: 'notice',
@@ -35,7 +36,7 @@ const NewsEventsPage = () => {
       date: 'February 2025',
       title: 'Parent-Teacher Meet — Term II',
       text: 'The Term II Parent-Teacher Meet is scheduled for February 2025. All parents and guardians are requested to attend and review their child\'s progress report with the respective class teacher.',
-      icon: '📋'
+      iconName: 'clipboardList'
     },
     {
       category: 'events',
@@ -43,7 +44,7 @@ const NewsEventsPage = () => {
       date: 'January 2025',
       title: 'Republic Day Celebrations',
       text: 'Republic Day was celebrated with great pride and patriotic fervour at DPS Robertsganj. Students presented cultural programmes, patriotic songs, and a stirring flag-hoisting ceremony.',
-      icon: '🇮🇳'
+      iconName: 'flag'
     },
     {
       category: 'notice',
@@ -51,7 +52,7 @@ const NewsEventsPage = () => {
       date: 'December 2024',
       title: 'Winter Break Schedule 2024',
       text: 'The school will observe its winter break from 25th December 2024 to 1st January 2025. Classes will resume on 2nd January 2025. We wish all students and families a warm and joyful holiday season.',
-      icon: '❄️'
+      iconName: 'calendar'
     }
   ];
 
@@ -65,18 +66,18 @@ const NewsEventsPage = () => {
   ];
 
   const achievements = [
-    { icon: '🥇', title: 'District-Level Archery Champions', text: '3 students from DPS Robertsganj won gold at the District Archery Championship 2024, bringing honour to the school.' },
-    { icon: '🤖', title: 'Robotics Showcase — State Level', text: 'Our robotics team presented their project at the state-level innovation showcase, receiving commendation from the jury.' },
-    { icon: '🎤', title: 'Debate Competition — Regional Winner', text: 'A Class X student won first place at the Regional Interschool Debate Competition, competing against 24 other schools.' },
-    { icon: '🎨', title: 'Art Exhibition Recognised', text: 'The school\'s annual art exhibition was featured in the local press, with several student artworks selected for the district gallery.' }
+    { iconName: 'award',   title: 'District-Level Archery Champions',  text: '3 students from DPS Robertsganj won gold at the District Archery Championship 2024, bringing honour to the school.' },
+    { iconName: 'cpu',     title: 'Robotics Showcase — State Level',   text: 'Our robotics team presented their project at the state-level innovation showcase, receiving commendation from the jury.' },
+    { iconName: 'mic',     title: 'Debate Competition — Regional Winner', text: 'A Class X student won first place at the Regional Interschool Debate Competition, competing against 24 other schools.' },
+    { iconName: 'palette', title: 'Art Exhibition Recognised',         text: 'The school\'s annual art exhibition was featured in the local press, with several student artworks selected for the district gallery.' }
   ];
 
   const tabs = [
-    { key: 'all', label: 'All' },
+    { key: 'all',        label: 'All' },
     { key: 'admissions', label: 'Admissions' },
-    { key: 'results', label: 'Results' },
-    { key: 'events', label: 'Events' },
-    { key: 'notice', label: 'Notices' }
+    { key: 'results',    label: 'Results' },
+    { key: 'events',     label: 'Events' },
+    { key: 'notice',     label: 'Notices' }
   ];
 
   const filtered = activeTab === 'all'
@@ -132,7 +133,9 @@ const NewsEventsPage = () => {
             {filtered.map((item, i) => (
               <div key={i} className="ne-announcement-card">
                 <div className="ne-card-header">
-                  <div className="ne-card-icon">{item.icon}</div>
+                  <div className="ne-card-icon">
+                    <Icon name={item.iconName} size={22} />
+                  </div>
                   <div>
                     <span className="ne-card-tag">{item.tag}</span>
                     <span className="ne-card-date">{item.date}</span>
@@ -192,7 +195,9 @@ const NewsEventsPage = () => {
           <div className="ne-achievements-grid">
             {achievements.map((ach, i) => (
               <div key={i} className="ne-achievement-card">
-                <div className="ne-ach-icon">{ach.icon}</div>
+                <div className="ne-ach-icon">
+                  <Icon name={ach.iconName} size={32} />
+                </div>
                 <h3 className="ne-ach-title">{ach.title}</h3>
                 <p className="ne-ach-text">{ach.text}</p>
               </div>
@@ -217,21 +222,21 @@ const NewsEventsPage = () => {
             <div className="ne-notice-right">
               <div className="ne-contact-info-card">
                 <div className="ne-contact-row">
-                  <span className="ne-contact-icon">📞</span>
+                  <span className="ne-contact-icon"><Icon name="phone" size={18} /></span>
                   <div>
                     <div className="ne-contact-label">School Office</div>
-                    <div className="ne-contact-value">+91 98209 67960</div>
+                    <div className="ne-contact-value">+91 78391 83961</div>
                   </div>
                 </div>
                 <div className="ne-contact-row">
-                  <span className="ne-contact-icon">✉️</span>
+                  <span className="ne-contact-icon"><Icon name="mail" size={18} /></span>
                   <div>
                     <div className="ne-contact-label">Email Us</div>
                     <div className="ne-contact-value">delhipublicschoolrobertsganj@gmail.com</div>
                   </div>
                 </div>
                 <div className="ne-contact-row">
-                  <span className="ne-contact-icon">🕐</span>
+                  <span className="ne-contact-icon"><Icon name="clock" size={18} /></span>
                   <div>
                     <div className="ne-contact-label">Office Hours</div>
                     <div className="ne-contact-value">Mon–Sat, 8:00 AM – 3:00 PM</div>
