@@ -79,7 +79,7 @@ const AcademicPage = () => {
     {
       icon: '📝',
       title: 'Advance Application Required',
-      text: 'Requests for Transfer Certificates, Character Certificates, Birth Certificates, or any other official documents must be submitted in writing to the Principal at least one week in advance, along with an advance payment of ₹300.'
+      text: 'Requests for Transfer Certificates, Character Certificates, Birth Certificates, or any other official documents must be submitted in writing to the Principal at least one week in advance, along with an advance payment of ₹500.'
     },
     {
       icon: '📅',
