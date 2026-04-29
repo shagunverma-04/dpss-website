@@ -66,9 +66,9 @@ const FacilitiesSection = () => {
           </div>
         </div>
 
-        {/* 3 small cards */}
+        {/* 2 small cards */}
         <div className="fac-small-col">
-          {facilities.slice(1).map((f, i) => (
+          {facilities.slice(1, 3).map((f, i) => (
             <div
               key={i}
               className={`fac-card fac-card--small ${inView ? 'reveal in-view' : 'reveal'}`}
