@@ -162,7 +162,7 @@ const AdmissionsPage = ({ onNavigate }) => {
               <div className="director-signature">
                 <div className="director-sig-line" />
                 <div>
-                  <div className="director-sig-name">The Director</div>
+                  <div className="director-sig-name">Mr. Santosh Kumar Verma, The Director</div>
                   <div className="director-sig-school">Delhi Public Secondary School, Robertsganj</div>
                 </div>
               </div>

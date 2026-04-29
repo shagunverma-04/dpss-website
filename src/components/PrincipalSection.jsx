@@ -56,7 +56,7 @@ const PrincipalSection = () => {
           <div className="principal-signature">
             <div className="principal-sig-line" />
             <div>
-              <div className="principal-sig-name">The Principal</div>
+              <div className="principal-sig-name">Mr. Alok Singh, The Principal</div>
               <div className="principal-sig-school">Delhi Public Secondary School, Robertsganj</div>
             </div>
           </div>
