@@ -22,7 +22,7 @@ const WelcomeSection = () => {
         {/* ── Left: stacked image block ── */}
         <div className={`welcome-media ${inView ? 'reveal-left in-view' : 'reveal-left'}`}>
           <div className="welcome-img-main">
-            <img src="img/photo2.jpg" alt="DPS Robertsganj Campus" />
+            <img src="img/483602526_962273392696256_1420162025912076689_n.jpg" alt="DPS Robertsganj Campus" />
           </div>
           {/*<div className="welcome-img-secondary">
             <img src="img/477798227_941798504743745_5546827519590064483_n.jpg" alt="Smart Classrooms" />

@@ -11,21 +11,14 @@ const facilities = [
     size: 'large'
   },
   {
-    image: 'img/477798227_941798504743745_5546827519590064483_n.jpg',
+    image: 'img/559008640_1122708749986052_3011674443979693050_n.jpg',
     title: 'Smart Classrooms',
     tag: 'Technology',
     description: 'Wi-Fi campus with LCD monitors, multimedia desktops, and ICT-enabled learning in every room.',
     size: 'small'
   },
   {
-    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=400&fit=crop&q=90',
-    title: 'Modern Library',
-    tag: 'Knowledge',
-    description: 'Thousands of volumes alongside digital resources — a sanctuary for curious minds.',
-    size: 'small'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=600&h=400&fit=crop&q=90',
+    image: 'img/photo2.jpg',
     title: 'Science Labs',
     tag: 'Discovery',
     description: 'Fully equipped Physics, Chemistry, Biology and Computer labs that bring learning to life.',
