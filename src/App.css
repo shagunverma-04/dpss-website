@@ -40,6 +40,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* ===== Layout Utilities ===== */
 .section-container {
   max-width: 1400px;
@@ -140,5 +145,12 @@ body {
 
 @media (max-width: 480px) {
   .section-container { padding: 0 16px; }
-  .section-title { font-size: 30px; }
+  .section-title { font-size: 28px; }
+  .section-description { font-size: 14.5px; }
+  .section-label { font-size: 10px; letter-spacing: 2.5px; }
+}
+
+@media (max-width: 360px) {
+  .section-container { padding: 0 14px; }
+  .section-title { font-size: 24px; }
 }

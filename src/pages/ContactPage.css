@@ -599,7 +599,15 @@
 
 @media (max-width: 480px) {
   .ct-hero-title {
-    font-size: 30px;
+    font-size: 26px;
+  }
+
+  .ct-hero-sub {
+    font-size: 14px;
+  }
+
+  .ct-card {
+    padding: 28px 22px;
   }
 
   .ct-departments,
@@ -609,5 +617,13 @@
 
   .ct-map-placeholder {
     height: 240px;
+  }
+
+  .ct-map-name {
+    font-size: 18px;
+  }
+
+  .ct-success {
+    padding: 36px 24px;
   }
 }

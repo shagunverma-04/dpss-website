@@ -1,12 +1,13 @@
 import React from 'react';
 import './AcademicPage.css';
+import Icon from '../components/Icon';
 
 const AcademicPage = () => {
   const curriculumLevels = [
     {
       level: 'Pre-Primary',
       classes: 'Playgroup · LKG · UKG',
-      icon: '🌱',
+      iconName: 'bookOpen',
       color: '#E8F5E9',
       borderColor: '#075133',
       image: 'img/475503113_933242605599335_5323577677694140088_n.jpg',
@@ -18,7 +19,7 @@ const AcademicPage = () => {
     {
       level: 'Primary',
       classes: 'Class I – Class V',
-      icon: '📚',
+      iconName: 'graduationCap',
       color: '#E3F2FD',
       borderColor: '#1565C0',
       image: 'img/08584007-3c15-4055-b449-48f632ee10bd.jpg',
@@ -30,13 +31,25 @@ const AcademicPage = () => {
     {
       level: 'Middle Level',
       classes: 'Class VI – Class VIII',
-      icon: '🔬',
+      iconName: 'cpu',
       color: '#FFF3E0',
       borderColor: '#E65100',
       image: 'img/476831564_941790714744524_1521817662912512543_n.jpg',
       paragraphs: [
         'At the Middle Level, we move beyond textbooks. Following NCERT guidelines, our ICT-enabled classrooms empower students to visualise, question, and explore. Our teachers act as guides and facilitators — championing "learning by doing" over rote memorisation.',
         'Students continue with English, Hindi, Sanskrit (as the third language), Mathematics, Science, Social Science, Computer Science, Physical and Health Education, Work Experience, and Life Skills — building a well-rounded academic base for the years ahead.'
+      ]
+    },
+    {
+      level: 'Secondary',
+      classes: 'Class IX – Class X',
+      iconName: 'target',
+      color: '#EDE7F6',
+      borderColor: '#4527A0',
+      image: 'img/475135876_931854365738159_7293315653921356242_n.jpg',
+      paragraphs: [
+        'The Secondary stage marks a defining chapter in every student\'s academic life. Aligned with the CBSE curriculum, our programme for Classes IX and X prepares students for the AISSE Board Examinations through rigorous academics, conceptual clarity, and continuous assessment that builds both knowledge and confidence.',
+        'Beyond the classroom, students engage in career awareness sessions, leadership opportunities, and a range of co-curricular pursuits — from debate and dramatics to sports, robotics, and community service. The result is a well-rounded young person, ready not just for board exams but for the choices and challenges that follow.'
       ]
     }
   ];
@@ -77,17 +90,17 @@ const AcademicPage = () => {
 
   const certificateRules = [
     {
-      icon: '📝',
+      iconName: 'fileText',
       title: 'Advance Application Required',
       text: 'Requests for Transfer Certificates, Character Certificates, Birth Certificates, or any other official documents must be submitted in writing to the Principal at least one week in advance, along with an advance payment of ₹500.'
     },
     {
-      icon: '📅',
+      iconName: 'calendar',
       title: 'Minimum Session Completion',
       text: 'Certificates of any kind are issued only after the student has completed at least one full academic session. No certificate will be processed before this condition is met.'
     },
     {
-      icon: '✅',
+      iconName: 'checkCircle',
       title: 'Fee Clearance is Mandatory',
       text: 'All pending fees and dues must be fully cleared before any certificate is issued. Please ensure your account is settled before making a request.'
     }
@@ -131,7 +144,9 @@ const AcademicPage = () => {
               <h2 className="section-title">School Fee Structure</h2>
               <p className="section-description">{feeNote}</p>
               <div className="fee-banner">
-                <div className="fee-banner-icon">🏫</div>
+                <div className="fee-banner-icon">
+                  <Icon name="building" size={32} />
+                </div>
                 <div className="fee-banner-content">
                   <h3>Fee Structure for Session 2026-27</h3>
                   <p>
@@ -161,7 +176,9 @@ const AcademicPage = () => {
           <div className="cert-grid">
             {certificateRules.map((rule, i) => (
               <div key={i} className="cert-card">
-                <div className="cert-icon">{rule.icon}</div>
+                <div className="cert-icon">
+                  <Icon name={rule.iconName} size={28} />
+                </div>
                 <h3 className="cert-title">{rule.title}</h3>
                 <p className="cert-text">{rule.text}</p>
               </div>
@@ -192,7 +209,9 @@ const AcademicPage = () => {
                 <div className="curriculum-photo-wrap">
                   <img src={item.image} alt={item.level} className="curriculum-photo" />
                   <div className="curriculum-photo-badge" style={{ background: item.borderColor }}>
-                    <span className="curriculum-badge-icon">{item.icon}</span>
+                    <span className="curriculum-badge-icon">
+                      <Icon name={item.iconName} size={16} />
+                    </span>
                     <span className="curriculum-badge-text">{item.classes}</span>
                   </div>
                 </div>

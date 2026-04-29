@@ -481,18 +481,53 @@
 
 @media (max-width: 480px) {
   .ne-hero-title {
-    font-size: 28px;
+    font-size: 26px;
+  }
+
+  .ne-hero-sub {
+    font-size: 14px;
   }
 
   .ne-event-row {
     padding: 16px 18px;
+    flex-wrap: wrap;
+  }
+
+  .ne-event-date-block {
+    min-width: 56px;
+  }
+
+  .ne-event-day {
+    font-size: 24px;
   }
 
   .ne-event-divider {
-    margin: 0 14px;
+    margin: 0 12px;
+  }
+
+  .ne-event-title {
+    font-size: 15px;
+  }
+
+  .ne-event-desc {
+    font-size: 13px;
   }
 
   .ne-notice-banner {
     padding: 28px 20px;
+  }
+
+  .ne-notice-title {
+    font-size: 24px;
+  }
+
+  .ne-announcement-card,
+  .ne-achievement-card {
+    padding: 24px 20px;
+  }
+
+  .ne-tab {
+    font-size: 13px;
+    padding: 8px 16px;
   }
 }
