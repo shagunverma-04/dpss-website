@@ -1,11 +1,34 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './NewsEventsPage.css';
 import Icon from '../components/Icon';
+import { api } from '../api/client';
+
+const MONTHS = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+
+function formatNewsDate(value) {
+  if (!value) return '';
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) return value;
+  return d.toLocaleDateString('en-IN', { month: 'long', year: 'numeric' });
+}
+
+function eventDateParts(value) {
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) return { month: '', date: '' };
+  return { month: MONTHS[d.getMonth()], date: String(d.getDate()).padStart(2, '0') };
+}
 
 const NewsEventsPage = () => {
   const [activeTab, setActiveTab] = useState('all');
+  const [liveNews, setLiveNews] = useState([]);
+  const [liveEvents, setLiveEvents] = useState([]);
 
-  const announcements = [
+  useEffect(() => {
+    api.listNews().then(setLiveNews).catch(() => {});
+    api.listEvents().then(setLiveEvents).catch(() => {});
+  }, []);
+
+  const fallbackAnnouncements = [
     {
       category: 'admissions',
       tag: 'Admissions',
@@ -56,7 +79,7 @@ const NewsEventsPage = () => {
     }
   ];
 
-  const upcomingEvents = [
+  const fallbackUpcomingEvents = [
     { month: 'APR', date: '14', title: 'New Academic Session Begins', desc: 'Session 2025–26 commences for all classes.', type: 'Academic' },
     { month: 'APR', date: '25', title: 'Class I Orientation Day', desc: 'Welcome programme for new Class I students and their parents.', type: 'Event' },
     { month: 'MAY', date: '10', title: 'Inter-House Sports Competition', desc: 'Track and field events across all four houses.', type: 'Sports' },
@@ -64,6 +87,31 @@ const NewsEventsPage = () => {
     { month: 'JUL', date: '26', title: 'Kargil Vijay Diwas Assembly', desc: 'Special assembly and cultural programme to honour our heroes.', type: 'Cultural' },
     { month: 'AUG', date: '15', title: 'Independence Day Celebration', desc: 'Flag hoisting, march-past, and patriotic performances.', type: 'Cultural' }
   ];
+
+  // Use live data when available, otherwise show curated fallback
+  const announcements = liveNews.length > 0
+    ? liveNews.map((n) => ({
+        category: 'notice',
+        tag: 'News',
+        date: formatNewsDate(n.published_at),
+        title: n.title,
+        text: n.body,
+        iconName: 'fileText'
+      }))
+    : fallbackAnnouncements;
+
+  const upcomingEvents = liveEvents.length > 0
+    ? liveEvents.map((e) => {
+        const parts = eventDateParts(e.event_date);
+        return {
+          month: parts.month,
+          date: parts.date,
+          title: e.title,
+          desc: e.description || (e.location ? `Location: ${e.location}` : ''),
+          type: 'Event'
+        };
+      })
+    : fallbackUpcomingEvents;
 
   const achievements = [
     { iconName: 'award',   title: 'District-Level Archery Champions',  text: '3 students from DPS Robertsganj won gold at the District Archery Championship 2024, bringing honour to the school.' },

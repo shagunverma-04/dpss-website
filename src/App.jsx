@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import UtilityBar from './components/UtilityBar';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -17,10 +17,28 @@ import StudentLifePage from './pages/StudentLifePage';
 import NewsEventsPage from './pages/NewsEventsPage';
 import ContactPage from './pages/ContactPage';
 import GalleryPage from './pages/GalleryPage';
+import AdminPage from './pages/AdminPage';
 import './App.css';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home');
+  const isAdminRoute = typeof window !== 'undefined' && window.location.pathname.startsWith('/admin');
+  const [currentPage, setCurrentPage] = useState(isAdminRoute ? 'admin' : 'home');
+
+  // Keep URL in sync when entering/leaving admin via in-app navigation
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const onAdmin = window.location.pathname.startsWith('/admin');
+    if (currentPage === 'admin' && !onAdmin) {
+      window.history.pushState({}, '', '/admin');
+    } else if (currentPage !== 'admin' && onAdmin) {
+      window.history.pushState({}, '', '/');
+    }
+  }, [currentPage]);
+
+  if (currentPage === 'admin') {
+    return <AdminPage />;
+  }
+
   const isHome = currentPage === 'home';
 
   return (
