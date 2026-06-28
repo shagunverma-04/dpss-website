@@ -15,6 +15,7 @@ import AcademicPage from './pages/AcademicPage';
 import AdmissionsPage from './pages/AdmissionsPage';
 import StudentLifePage from './pages/StudentLifePage';
 import NewsEventsPage from './pages/NewsEventsPage';
+import MandatoryDisclosuresPage from './pages/MandatoryDisclosuresPage';
 import ContactPage from './pages/ContactPage';
 import GalleryPage from './pages/GalleryPage';
 import AdminPage from './pages/AdminPage';
@@ -66,6 +67,7 @@ function App() {
       {currentPage === 'admissions'   && <AdmissionsPage onNavigate={setCurrentPage} />}
       {currentPage === 'student-life' && <StudentLifePage />}
       {currentPage === 'news-events'  && <NewsEventsPage />}
+      {currentPage === 'mandatory-disclosures' && <MandatoryDisclosuresPage />}
       {currentPage === 'gallery'      && <GalleryPage />}
       {currentPage === 'contact'      && <ContactPage />}
 

@@ -1,0 +1,160 @@
+/* ===== Mandatory Disclosures Page ===== */
+
+.disclosures-page {
+  min-height: 100vh;
+}
+
+/* ===== Hero — full photo background ===== */
+.disclosures-hero {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+.disclosures-hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: brightness(0.55) saturate(0.85);
+}
+
+.disclosures-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(5, 65, 40, 0.85) 0%,
+    rgba(7, 81, 51, 0.65) 55%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+}
+
+.disclosures-hero-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.disclosures-hero-content .section-label {
+  color: var(--accent);
+}
+
+.disclosures-hero-title {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  color: white;
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+
+.disclosures-hero-sub {
+  font-size: 17px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 640px;
+}
+
+/* ===== Section Layout ===== */
+.disclosures-section {
+  padding: 100px 0 120px;
+}
+
+/* ===== Document categories ===== */
+.disc-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.disc-category-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -0.2px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.disc-doc-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.disc-doc-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--bg-light);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.disc-doc-row:hover {
+  border-color: var(--primary);
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+.disc-doc-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(7, 81, 51, 0.08);
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.disc-doc-title {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.disc-doc-view {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--primary);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.disc-doc-arrow {
+  width: 14px;
+  height: 14px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 860px) {
+  .disclosures-hero-title { font-size: 38px; }
+  .disc-doc-list { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 540px) {
+  .disc-doc-title { font-size: 13.5px; }
+  .disc-doc-view span { display: none; }
+}

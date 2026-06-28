@@ -8,6 +8,7 @@ const Footer = ({ onNavigate }) => {
     { text: 'Admissions', page: 'admissions' },
     { text: 'Student Life', page: 'student-life' },
     { text: 'News & Events', page: 'news-events' },
+    { text: 'Mandatory Disclosures', page: 'mandatory-disclosures' },
   ];
 
   const academics = [

@@ -24,6 +24,7 @@ const Header = ({ currentPage, onNavigate }) => {
     { text: 'Student Life', page: 'student-life' },
     { text: 'News & Events',page: 'news-events' },
     { text: 'Gallery',      page: 'gallery' },
+    { text: 'Disclosures',  page: 'mandatory-disclosures' },
     { text: 'Contact',      page: 'contact' },
   ];
 
